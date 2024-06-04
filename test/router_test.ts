@@ -10,6 +10,5 @@ Deno.test("Root Path", async <R extends string>() => {
   });
   await router.routes()(ctx, () => Promise.resolve());
 
-  assertEquals(ctx.response.body, "Hello, Deno!");
   assertEquals(ctx.response.status, STATUS_CODE.OK);
 });

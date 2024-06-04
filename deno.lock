@@ -24,7 +24,6 @@
       "jsr:@std/media-types@0.222": "jsr:@std/media-types@0.222.1",
       "jsr:@std/media-types@0.223": "jsr:@std/media-types@0.223.0",
       "jsr:@std/path@0.223": "jsr:@std/path@0.223.0",
-      "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:path-to-regexp@6.2.1": "npm:path-to-regexp@6.2.1"
     },
     "jsr": {
@@ -128,17 +127,30 @@
       }
     },
     "npm": {
-      "@types/node@18.16.19": {
-        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
-        "dependencies": {}
-      },
       "path-to-regexp@6.2.1": {
         "integrity": "sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==",
         "dependencies": {}
       }
     }
   },
-  "remote": {},
+  "remote": {
+    "https://esm.sh/@octokit/rest@20.1.1": "56f756c9b39dd8e185fe320a223e3d773683841c17ca2cb234f11ca7c0803cef",
+    "https://esm.sh/v135/@octokit/auth-token@4.0.0/denonext/auth-token.mjs": "ab9285959f2bc3ca7942bfb81df3e2f15f5895c829455156647faa403b75703b",
+    "https://esm.sh/v135/@octokit/core@5.2.0/denonext/core.mjs": "2bb7da944dbebeed79f1d2fe6afee247dc9f733b66e6242092268767afa6d571",
+    "https://esm.sh/v135/@octokit/endpoint@9.0.4/denonext/endpoint.mjs": "d6a3b9d471d2ff2d1fb5b736ebba9589bfcadc0a563ec4e51adc423fdb2e91d2",
+    "https://esm.sh/v135/@octokit/graphql@7.1.0/denonext/graphql.mjs": "4e0ba99cae80d01f7ec5ed6ada2304d799dc365e6f4094604167b621ff7d0d3f",
+    "https://esm.sh/v135/@octokit/plugin-paginate-rest@11.3.1/denonext/plugin-paginate-rest.mjs": "8f64c07d869b1a3cacb34a1c837c963f6f28fbc1045ac2617c654ccac87c7b6b",
+    "https://esm.sh/v135/@octokit/plugin-request-log@4.0.1/denonext/plugin-request-log.mjs": "659edfc1fceba675331ed830ccf523e45529682722fe73781090235834329240",
+    "https://esm.sh/v135/@octokit/plugin-rest-endpoint-methods@13.2.2/denonext/plugin-rest-endpoint-methods.mjs": "c2795d2650bbf8307c6e58f157954be29986164c694beba8c0f29a9523659748",
+    "https://esm.sh/v135/@octokit/request-error@5.1.0/denonext/request-error.mjs": "0d7d746d259a2be24a0cd3a3f64eefa3d756f13b873a9abcf41423d2bdec1af2",
+    "https://esm.sh/v135/@octokit/request@8.4.0/denonext/request.mjs": "a1f63775a6c089a6b286b6e833643b3f253a532b1d538bf6dfd7b3e9396072c3",
+    "https://esm.sh/v135/@octokit/rest@20.1.1/denonext/rest.mjs": "4ef1a8b66120b3ebe351508fe6bc55aabfad405ab7b7e26232fe831b289580cc",
+    "https://esm.sh/v135/before-after-hook@2.2.3/denonext/before-after-hook.mjs": "f4262d059d899d7fcaa8d903bcf352df38ac1c040bb45273d79de200ffdad267",
+    "https://esm.sh/v135/deprecation@2.3.1/denonext/deprecation.mjs": "0bf7139d1068345709e59dddb4daea315691d290a8c896a6e076dea02dd66eaf",
+    "https://esm.sh/v135/once@1.4.0/denonext/once.mjs": "5ab9193c36609f6c5cf6f1e2e37dd952c87d8ff0b0267433c29b228a2c470cd5",
+    "https://esm.sh/v135/universal-user-agent@6.0.1/denonext/universal-user-agent.mjs": "053324bcacbaf066d185d6bf0a3797ee474d975f720ce75351238e420fc82c22",
+    "https://esm.sh/v135/wrappy@1.0.2/denonext/wrappy.mjs": "3c31e4782e0307cf56b319fcec6110f925dafe6cb47a8fa23350d480f5fa8b06"
+  },
   "workspace": {
     "dependencies": [
       "jsr:@oak/oak@16.0.0",
