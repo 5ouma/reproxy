@@ -1,20 +1,19 @@
 import type { RouterContext } from "@oak/oak";
 import { Octokit } from "@octokit/rest";
+import { getRepository } from "./env.ts";
 
 export async function getContent<R extends string>(
-  ctx: RouterContext<R>,
-  owner: string,
-  name: string,
-  path: string
+  ctx: RouterContext<R>
 ): Promise<void> {
   const octokit = new Octokit();
+  const repository = getRepository();
 
   try {
     const { status, data } = await octokit.rest.repos.getContent({
       mediaType: { format: "raw" },
-      owner: owner,
-      repo: name,
-      path: path,
+      owner: repository.owner,
+      repo: repository.name,
+      path: repository.path,
     });
 
     ctx.response.status = status;
