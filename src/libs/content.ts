@@ -3,7 +3,8 @@ import { Octokit } from "@octokit/rest";
 import { getRepository } from "./env.ts";
 
 export async function getContent<R extends string>(
-  ctx: RouterContext<R>
+  ctx: RouterContext<R>,
+  ref: string | undefined = undefined
 ): Promise<void> {
   const octokit = new Octokit();
   const repository = getRepository();
@@ -14,6 +15,7 @@ export async function getContent<R extends string>(
       owner: repository.owner,
       repo: repository.name,
       path: repository.path,
+      ref: ref,
     });
 
     ctx.response.status = status;
