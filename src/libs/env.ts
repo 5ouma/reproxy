@@ -13,3 +13,5 @@ export function getRepository(): Repository {
 
   return repository;
 }
+
+export const githubToken: string | undefined = Deno.env.get("GITHUB_TOKEN");
