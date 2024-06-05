@@ -9,7 +9,7 @@ export function getRepository(): Repository {
 
   for (const key in repository)
     if (!repository[key as keyof Repository])
-      console.error(`🚨 Env not set: $REPOSITORY_${key.toUpperCase()}`);
+      console.error(`🚨 missing: $REPOSITORY_${key.toUpperCase()}`);
 
   return repository;
 }

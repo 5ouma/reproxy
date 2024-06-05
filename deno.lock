@@ -17,6 +17,7 @@
       "jsr:@std/crypto@0.223": "jsr:@std/crypto@0.223.0",
       "jsr:@std/encoding@^0.222.1": "jsr:@std/encoding@0.222.1",
       "jsr:@std/encoding@^0.223.0": "jsr:@std/encoding@0.223.0",
+      "jsr:@std/fmt@0.225.3": "jsr:@std/fmt@0.225.3",
       "jsr:@std/http@0.222": "jsr:@std/http@0.222.1",
       "jsr:@std/http@0.223": "jsr:@std/http@0.223.0",
       "jsr:@std/http@0.224.3": "jsr:@std/http@0.224.3",
@@ -90,6 +91,9 @@
       "@std/encoding@0.223.0": {
         "integrity": "2b5615a75e00337ce113f34cf2f9b8c18182c751a8dcc8b1a2c2fc0e117bef00"
       },
+      "@std/fmt@0.225.3": {
+        "integrity": "cb6ea567155f9865b80b502b2dde7671803eddd6dad743d8851d0de2c40bd349"
+      },
       "@std/http@0.222.1": {
         "integrity": "a3c731ec6040927aa37d8378b9e6b467e2e3068c1f97838a6e79ee3bdc103521",
         "dependencies": [
@@ -160,6 +164,7 @@
     "dependencies": [
       "jsr:@oak/oak@16.0.0",
       "jsr:@std/assert@0.226.0",
+      "jsr:@std/fmt@0.225.3",
       "jsr:@std/http@0.224.3",
       "jsr:@std/http@~0.223",
       "jsr:@std/path@0.225.2"
