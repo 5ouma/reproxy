@@ -1,18 +1,14 @@
 import { assertEquals } from "@std/assert";
 import { getRepository } from "../../src/libs/env.ts";
+import { unknownRepo, exportRepo } from "../utils.ts";
 
 Deno.test("Get Repository Env", () => {
-  const repositoryOwner = "repository-owner";
-  const repositoryName = "repository-name";
-  const repositoryPath = "repository-path";
-  Deno.env.set("REPOSITORY_OWNER", repositoryOwner);
-  Deno.env.set("REPOSITORY_NAME", repositoryName);
-  Deno.env.set("REPOSITORY_PATH", repositoryPath);
+  exportRepo(unknownRepo);
 
   const repository = getRepository();
-  assertEquals(repository.owner, repositoryOwner);
-  assertEquals(repository.name, repositoryName);
-  assertEquals(repository.path, repositoryPath);
+  assertEquals(repository.owner, unknownRepo.owner);
+  assertEquals(repository.name, unknownRepo.name);
+  assertEquals(repository.path, unknownRepo.path);
 });
 
 Deno.test("Get Repository Env (Not set)", () => {
