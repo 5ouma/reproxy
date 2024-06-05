@@ -6,7 +6,8 @@ import { getRepository } from "./env.ts";
 
 export function redirect<R extends string>(
   ctx: RouterContext<R>,
-  userAgent: UserAgent
+  userAgent: UserAgent,
+  ref: string = "HEAD"
 ): void {
   const repository = getRepository();
   const url: string =
@@ -16,7 +17,7 @@ export function redirect<R extends string>(
       repository.owner,
       repository.name,
       "blob",
-      "HEAD",
+      ref,
       repository.path
     );
 
