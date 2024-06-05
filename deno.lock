@@ -9,6 +9,7 @@
       "jsr:@std/assert@0.226.0": "jsr:@std/assert@0.226.0",
       "jsr:@std/assert@^0.222.1": "jsr:@std/assert@0.222.1",
       "jsr:@std/assert@^0.223.0": "jsr:@std/assert@0.223.0",
+      "jsr:@std/assert@^0.226.0": "jsr:@std/assert@0.226.0",
       "jsr:@std/bytes@0.222": "jsr:@std/bytes@0.222.1",
       "jsr:@std/bytes@0.223": "jsr:@std/bytes@0.223.0",
       "jsr:@std/bytes@^0.223.0": "jsr:@std/bytes@0.223.0",
@@ -19,11 +20,13 @@
       "jsr:@std/http@0.222": "jsr:@std/http@0.222.1",
       "jsr:@std/http@0.223": "jsr:@std/http@0.223.0",
       "jsr:@std/http@0.224.3": "jsr:@std/http@0.224.3",
+      "jsr:@std/http@~0.223": "jsr:@std/http@0.223.0",
       "jsr:@std/internal@^1.0.0": "jsr:@std/internal@1.0.0",
       "jsr:@std/io@0.223": "jsr:@std/io@0.223.0",
       "jsr:@std/media-types@0.222": "jsr:@std/media-types@0.222.1",
       "jsr:@std/media-types@0.223": "jsr:@std/media-types@0.223.0",
       "jsr:@std/path@0.223": "jsr:@std/path@0.223.0",
+      "jsr:@std/path@0.225.2": "jsr:@std/path@0.225.2",
       "npm:path-to-regexp@6.2.1": "npm:path-to-regexp@6.2.1"
     },
     "jsr": {
@@ -78,7 +81,6 @@
       "@std/crypto@0.223.0": {
         "integrity": "1aa9555ff56b09e197ad988ea200f84bc6781fd4fd83f3a156ee44449af93000",
         "dependencies": [
-          "jsr:@std/assert@^0.223.0",
           "jsr:@std/encoding@^0.223.0"
         ]
       },
@@ -120,9 +122,12 @@
         "integrity": "84684680c2eb6bc6d9369c6d6f26a49decaf2c7603ff531862dda575d9d6776e"
       },
       "@std/path@0.223.0": {
-        "integrity": "593963402d7e6597f5a6e620931661053572c982fc014000459edc1f93cc3989",
+        "integrity": "593963402d7e6597f5a6e620931661053572c982fc014000459edc1f93cc3989"
+      },
+      "@std/path@0.225.2": {
+        "integrity": "0f2db41d36b50ef048dcb0399aac720a5348638dd3cb5bf80685bf2a745aa506",
         "dependencies": [
-          "jsr:@std/assert@^0.223.0"
+          "jsr:@std/assert@^0.226.0"
         ]
       }
     },
@@ -155,7 +160,9 @@
     "dependencies": [
       "jsr:@oak/oak@16.0.0",
       "jsr:@std/assert@0.226.0",
-      "jsr:@std/http@0.224.3"
+      "jsr:@std/http@0.224.3",
+      "jsr:@std/http@~0.223",
+      "jsr:@std/path@0.225.2"
     ]
   }
 }
