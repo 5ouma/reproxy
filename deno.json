@@ -3,8 +3,8 @@
   "fmt": { "exclude": ["LICENSE", ".github/**/*.md"] },
   "test": { "include": ["src/", "test/"] },
   "tasks": {
-    "start": "deno run --allow-net='0.0.0.0,api.github.com' ./src/server.ts",
-    "test": "deno test --allow-net='api.github.com' --parallel --shuffle"
+    "start": "deno run --env='.env' --allow-env='REPOSITORY_OWNER,REPOSITORY_NAME,REPOSITORY_PATH' --allow-net='0.0.0.0,api.github.com' ./src/server.ts",
+    "test": "deno test --allow-env='REPOSITORY_OWNER,REPOSITORY_NAME,REPOSITORY_PATH' --allow-net='api.github.com' --parallel --shuffle"
   },
   "imports": {
     "@oak/oak": "jsr:@oak/oak@16.0.0",
