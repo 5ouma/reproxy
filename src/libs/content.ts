@@ -1,12 +1,12 @@
 import type { RouterContext } from "@oak/oak";
 import { Octokit } from "@octokit/rest";
-import { getRepository } from "./env.ts";
+import { getRepository, githubToken } from "./env.ts";
 
 export async function getContent<R extends string>(
   ctx: RouterContext<R>,
   ref: string | undefined = undefined
 ): Promise<void> {
-  const octokit = new Octokit();
+  const octokit = new Octokit({ auth: githubToken });
   const repository = getRepository();
 
   try {
