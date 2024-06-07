@@ -1,0 +1,32 @@
+name: 🧪 Test
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - "**.ts"
+      - "deno.lock"
+      - ".github/workflows/test.yml"
+  pull_request:
+    paths:
+      - "**.ts"
+      - "deno.lock"
+      - ".github/workflows/test.yml"
+
+jobs:
+  Test:
+    runs-on: Ubuntu-Latest
+
+    steps:
+      - name: 🚚 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🦕 Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: 🧪 Test Libraries
+        run: deno task test
