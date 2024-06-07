@@ -16,5 +16,10 @@
     "@std/http": "jsr:@std/http@0.224.3",
     "@std/http/user-agent": "jsr:@std/http@~0.223/user-agent",
     "@std/path": "jsr:@std/path@0.225.2"
+  },
+  "deploy": {
+    "project": "reproxy",
+    "include": ["./deno.json", "./src/"],
+    "entrypoint": "./src/server.ts"
   }
 }
