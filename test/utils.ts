@@ -19,3 +19,9 @@ export function exportRepo(repository: Repository) {
   Deno.env.set("REPOSITORY_NAME", repository.name);
   Deno.env.set("REPOSITORY_PATH", repository.path);
 }
+
+export function clearRepo() {
+  Deno.env.delete("REPOSITORY_OWNER");
+  Deno.env.delete("REPOSITORY_NAME");
+  Deno.env.delete("REPOSITORY_PATH");
+}
