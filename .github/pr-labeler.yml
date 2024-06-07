@@ -1,0 +1,27 @@
+alwaysReplace: true
+searchTitle: true
+searchBody: true
+
+customLabels:
+  - text: "- [x] 🎉 Feature"
+    label: "Type: Feature"
+  - text: "- [x] 🧰 Bug"
+    label: "Type: Bug"
+  - text: "- [x] 🛡️ Security"
+    label: "Type: Security"
+  - text: "- [x] 📖 Documentation"
+    label: "Type: Documentation"
+  - text: "- [x] 🧹 Refactoring"
+    label: "Type: Refactoring"
+  - text: "- [x] 🧪 Testing"
+    label: "Type: Testing"
+  - text: "- [x] 🔧 Maintenance"
+    label: "Type: Maintenance"
+  - text: "- [x] 🎽 CI"
+    label: "Type: CI"
+  - text: "- [x] ⛓️ Dependencies"
+    label: "Type: Dependencies"
+  - text: "chore(deps): "
+    label: "Type: Dependencies"
+  - text: "- [x] 🧠 Meta"
+    label: "Type: Meta"
