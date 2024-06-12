@@ -1,8 +1,8 @@
-import { testing, type RouterContext } from "@oak/oak";
+import { type RouterContext, testing } from "@oak/oak";
 import { assertEquals, assertStringIncludes } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
 import { getContent } from "../../src/libs/content.ts";
-import { testRepo, unknownRepo, testRef, exportRepo } from "../utils.ts";
+import { exportRepo, testRef, testRepo, unknownRepo } from "../utils.ts";
 
 Deno.test("Get Content", async <R extends string>() => {
   const ctx: RouterContext<R> = testing.createMockContext();
@@ -28,6 +28,6 @@ Deno.test("Get Content (Not found)", async <R extends string>() => {
   assertEquals(ctx.response.status, STATUS_CODE.NotFound);
   assertStringIncludes(
     ctx.response.body!.toString(),
-    `⚠️ ${STATUS_CODE.NotFound}:`
+    `⚠️ ${STATUS_CODE.NotFound}:`,
   );
 });

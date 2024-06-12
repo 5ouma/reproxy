@@ -1,9 +1,9 @@
-import { testing, type RouterContext } from "@oak/oak";
+import { type RouterContext, testing } from "@oak/oak";
 import { assertEquals } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
 import { UserAgent } from "@std/http/user-agent";
 import { redirect } from "../../src/libs/redirect.ts";
-import { testRepo, testRef, exportRepo } from "../utils.ts";
+import { exportRepo, testRef, testRepo } from "../utils.ts";
 
 Deno.test("Redirect Detection", <R extends string>() => {
   const ctx: RouterContext<R> = testing.createMockContext();
@@ -13,7 +13,7 @@ Deno.test("Redirect Detection", <R extends string>() => {
   assertEquals(ctx.response.status, STATUS_CODE.PermanentRedirect);
   assertEquals(
     ctx.response.headers.get("location"),
-    `https://github.com/${testRepo.owner}/${testRepo.name}/blob/HEAD/${testRepo.path}`
+    `https://github.com/${testRepo.owner}/${testRepo.name}/blob/master/${testRepo.path}`,
   );
 });
 
@@ -25,6 +25,6 @@ Deno.test("Redirect Detection (With ref)", <R extends string>() => {
   assertEquals(ctx.response.status, STATUS_CODE.PermanentRedirect);
   assertEquals(
     ctx.response.headers.get("location"),
-    `https://github.com/${testRepo.owner}/${testRepo.name}/blob/${testRef}/${testRepo.path}`
+    `https://github.com/${testRepo.owner}/${testRepo.name}/blob/${testRef}/${testRepo.path}`,
   );
 });

@@ -7,9 +7,11 @@ export function getRepository(): Repository {
     path: Deno.env.get("REPOSITORY_PATH") ?? "",
   };
 
-  for (const key in repository)
-    if (!repository[key as keyof Repository])
+  for (const key in repository) {
+    if (!repository[key as keyof Repository]) {
       console.error(`🚨 missing: $REPOSITORY_${key.toUpperCase()}`);
+    }
+  }
 
   return repository;
 }
