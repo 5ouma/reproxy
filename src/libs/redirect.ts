@@ -7,18 +7,17 @@ import { getRepository } from "./env.ts";
 export function redirect<R extends string>(
   ctx: RouterContext<R>,
   userAgent: UserAgent,
-  ref: string = "HEAD"
+  ref: string = "HEAD",
 ): void {
   const repository = getRepository();
-  const url: string =
-    "https://" +
+  const url: string = "https://" +
     join(
       "github.com",
       repository.owner,
       repository.name,
       "blob",
       ref,
-      repository.path
+      repository.path,
     );
 
   if (userAgent?.browser.name) {
