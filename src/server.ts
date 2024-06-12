@@ -12,11 +12,13 @@ app.addEventListener(
   "listen",
   ({ secure, hostname, port }: ApplicationListenEvent) => {
     console.log(
-      `🔔 listening: ${yellow(
-        `${secure ? "https" : "http"}://${hostname ?? "localhost"}:${port}`
-      )}`
+      `🔔 listening: ${
+        yellow(
+          `${secure ? "https" : "http"}://${hostname ?? "localhost"}:${port}`,
+        )
+      }`,
     );
-  }
+  },
 );
 
 await app.listen({ port: 8080 });

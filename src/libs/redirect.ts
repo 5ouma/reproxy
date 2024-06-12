@@ -7,7 +7,7 @@ import { getRepository } from "./env.ts";
 export function redirect<R extends string>(
   ctx: RouterContext<R>,
   userAgent: UserAgent,
-  ref: string = "master"
+  ref: string = "master",
 ): void {
   const repository = getRepository();
   const url = join(
@@ -16,7 +16,7 @@ export function redirect<R extends string>(
     repository.name,
     "blob",
     ref,
-    repository.path
+    repository.path,
   );
 
   if (userAgent?.browser.name) {
