@@ -7,7 +7,7 @@ import { getRepository } from "./env.ts";
 export function redirect<R extends string>(
   ctx: RouterContext<R>,
   userAgent: UserAgent,
-  ref: string = "HEAD"
+  ref: string = "master"
 ): void {
   const repository = getRepository();
   const url = join(

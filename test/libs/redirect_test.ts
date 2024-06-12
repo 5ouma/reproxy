@@ -13,7 +13,7 @@ Deno.test("Redirect Detection", <R extends string>() => {
   assertEquals(ctx.response.status, STATUS_CODE.PermanentRedirect);
   assertEquals(
     ctx.response.headers.get("location"),
-    `https://github.com/${testRepo.owner}/${testRepo.name}/blob/HEAD/${testRepo.path}`
+    `https://github.com/${testRepo.owner}/${testRepo.name}/blob/master/${testRepo.path}`
   );
 });
 
