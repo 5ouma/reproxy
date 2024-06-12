@@ -4,7 +4,7 @@ import { getRepository, githubToken } from "./env.ts";
 
 export async function getContent<R extends string>(
   ctx: RouterContext<R>,
-  ref: string | undefined = undefined
+  ref: string | undefined = undefined,
 ): Promise<void> {
   const octokit = new Octokit({ auth: githubToken });
   const repository = getRepository();
