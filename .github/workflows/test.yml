@@ -40,7 +40,7 @@ jobs:
       - name: 🔍 Type Check
         run: deno check ./**/*.ts
 
-      - name: 🦩 Upload Coverage
+      - name: ☂️ Upload Coverage
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
