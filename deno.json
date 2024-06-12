@@ -6,7 +6,8 @@
     "run": "deno run --env='.env' --allow-env='REPOSITORY_OWNER,REPOSITORY_NAME,REPOSITORY_PATH,GITHUB_TOKEN' --allow-net='0.0.0.0,api.github.com'",
     "start": "deno task run ./src/server.ts",
     "dev": "deno task run --watch ./src/server.ts",
-    "test": "deno test --allow-env='REPOSITORY_OWNER,REPOSITORY_NAME,REPOSITORY_PATH,GITHUB_TOKEN' --allow-net='api.github.com' --parallel --shuffle"
+    "test": "deno test --allow-env='REPOSITORY_OWNER,REPOSITORY_NAME,REPOSITORY_PATH,GITHUB_TOKEN' --allow-net='api.github.com' --parallel --shuffle",
+    "cov": "deno task test --coverage && deno coverage --lcov > coverage.lcov"
   },
   "imports": {
     "@oak/oak": "jsr:@oak/oak@16.1.0",
