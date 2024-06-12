@@ -9,11 +9,11 @@
     "test": "deno test --allow-env='REPOSITORY_OWNER,REPOSITORY_NAME,REPOSITORY_PATH,GITHUB_TOKEN' --allow-net='api.github.com' --parallel --shuffle"
   },
   "imports": {
-    "@oak/oak": "jsr:@oak/oak@16.0.0",
+    "@oak/oak": "jsr:@oak/oak@16.1.0",
     "@octokit/rest": "https://esm.sh/@octokit/rest@20.1.1",
     "@std/assert": "jsr:@std/assert@0.226.0",
-    "@std/fmt": "jsr:@std/fmt@0.225.3",
-    "@std/http": "jsr:@std/http@0.224.3",
+    "@std/fmt": "jsr:@std/fmt@0.225.4",
+    "@std/http": "jsr:@std/http@0.224.4",
     "@std/http/user-agent": "jsr:@std/http@~0.223/user-agent",
     "@std/path": "jsr:@std/path@0.225.2"
   },
