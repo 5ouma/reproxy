@@ -1,4 +1,4 @@
-import type { Repository } from "../types/mod.ts";
+import type { Repository } from "@5ouma/reproxy/types";
 
 export function getRepository(): Repository {
   const repository: Repository = {
