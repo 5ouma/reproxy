@@ -8,7 +8,7 @@ export function redirect<R extends string>(
   ctx: RouterContext<R>,
   userAgent: UserAgent,
   ref: string = "master",
-): void {
+): boolean {
   const repository = getRepository();
   const url = join(
     new URL("https://github.com"),
@@ -19,8 +19,9 @@ export function redirect<R extends string>(
     repository.path,
   );
 
-  if (userAgent?.browser.name) {
-    ctx.response.status = STATUS_CODE.PermanentRedirect;
-    ctx.response.redirect(url);
-  }
+  if (!userAgent?.browser.name) return false;
+
+  ctx.response.status = STATUS_CODE.PermanentRedirect;
+  ctx.response.redirect(url);
+  return true;
 }
