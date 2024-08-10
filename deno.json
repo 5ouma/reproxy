@@ -13,12 +13,12 @@
     "@5ouma/reproxy/libs": "./src/libs/mod.ts",
     "@5ouma/reproxy/types": "./src/types/mod.ts",
     "@oak/oak": "jsr:@oak/oak@16.1.0",
-    "@octokit/rest": "https://esm.sh/@octokit/rest@20.1.1",
-    "@std/assert": "jsr:@std/assert@0.226.0",
-    "@std/fmt": "jsr:@std/fmt@0.225.4",
-    "@std/http": "jsr:@std/http@0.224.4",
+    "@octokit/rest": "https://esm.sh/@octokit/rest@21.0.1",
+    "@std/assert": "jsr:@std/assert@1.0.2",
+    "@std/fmt": "jsr:@std/fmt@1.0.0",
+    "@std/http": "jsr:@std/http@1.0.2",
     "@std/http/user-agent": "jsr:@std/http@~0.223/user-agent",
-    "@std/url": "jsr:@std/url@0.224.1"
+    "@std/url": "jsr:@std/url@0.225.0"
   },
   "deploy": {
     "project": "reproxy",
