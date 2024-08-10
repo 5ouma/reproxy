@@ -1,8 +1,9 @@
 import { type RouterContext, testing } from "@oak/oak";
 import { assertEquals, assertStringIncludes } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
-import { getContent } from "@5ouma/reproxy/libs";
-import { exportRepo, testRef, testRepo, unknownRepo } from "../utils.ts";
+
+import { getContent } from "./content.ts";
+import { exportRepo, testRef, testRepo, unknownRepo } from "../test_utils.ts";
 
 Deno.test("Get Content", async <R extends string>(t: Deno.TestContext) => {
   const ctx: RouterContext<R> = testing.createMockContext();
