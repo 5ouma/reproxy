@@ -1,6 +1,7 @@
 import type { RouterContext } from "@oak/oak";
 import { Octokit } from "@octokit/rest";
-import { getRepository, githubToken } from "./env.ts";
+
+import { getRepository, githubToken } from "../utils/env.ts";
 
 export async function getContent<R extends string>(
   ctx: RouterContext<R>,

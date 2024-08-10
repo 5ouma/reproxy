@@ -2,8 +2,9 @@ import { type RouterContext, testing } from "@oak/oak";
 import { assertEquals } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
 import { UserAgent } from "@std/http/user-agent";
-import { redirect } from "@5ouma/reproxy/libs";
-import { exportRepo, testRef, testRepo } from "../utils.ts";
+
+import { redirect } from "./redirect.ts";
+import { exportRepo, testRef, testRepo } from "../test_utils.ts";
 
 Deno.test("Redirect Detection", async <R extends string>(t: Deno.TestContext) => {
   const ctx: RouterContext<R> = testing.createMockContext();
