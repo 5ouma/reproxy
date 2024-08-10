@@ -1,5 +1,5 @@
 import { Router, type RouterContext } from "@oak/oak";
-import { getContent, redirect } from "@5ouma/reproxy/libs";
+import { getContent, redirect } from "./libs/mod.ts";
 
 export const router = new Router();
 router

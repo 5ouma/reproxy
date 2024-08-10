@@ -26,8 +26,7 @@
       "jsr:@std/media-types@0.223": "jsr:@std/media-types@0.223.0",
       "jsr:@std/media-types@0.224": "jsr:@std/media-types@0.224.1",
       "jsr:@std/path@0.223": "jsr:@std/path@0.223.0",
-      "jsr:@std/path@^1.0.2": "jsr:@std/path@1.0.2",
-      "jsr:@std/url@0.225.0": "jsr:@std/url@0.225.0",
+      "jsr:@std/path@1.0.2": "jsr:@std/path@1.0.2",
       "npm:path-to-regexp@6.2.1": "npm:path-to-regexp@6.2.1"
     },
     "jsr": {
@@ -137,12 +136,6 @@
       },
       "@std/path@1.0.2": {
         "integrity": "a452174603f8c620bd278a380c596437a9eef50c891c64b85812f735245d9ec7"
-      },
-      "@std/url@0.225.0": {
-        "integrity": "fc854cc8a720e9c974904071140b462880d8347030006f43193935ae06c7a0f9",
-        "dependencies": [
-          "jsr:@std/path@^1.0.2"
-        ]
       }
     },
     "npm": {
@@ -177,7 +170,7 @@
       "jsr:@std/fmt@1.0.0",
       "jsr:@std/http@1.0.2",
       "jsr:@std/http@~0.223",
-      "jsr:@std/url@0.225.0"
+      "jsr:@std/path@1.0.2"
     ]
   }
 }

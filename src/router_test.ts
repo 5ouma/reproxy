@@ -1,8 +1,9 @@
 import { type RouterContext, testing } from "@oak/oak";
 import { assertEquals } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
-import { router } from "../src/router.ts";
-import { exportRepo, testRef, testRepo } from "./utils.ts";
+
+import { router } from "./router.ts";
+import { exportRepo, testRef, testRepo } from "./libs/test_utils.ts";
 
 Deno.test("Serve", async <R extends string>(t: Deno.TestContext) => {
   await t.step("/", async () => {

@@ -1,4 +1,4 @@
-import type { Repository } from "@5ouma/reproxy/types";
+import type { Repository } from "./types.ts";
 
 export const testRepo: Repository = {
   owner: "denoland",

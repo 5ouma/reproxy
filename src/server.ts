@@ -1,6 +1,7 @@
 import { Application } from "@oak/oak";
 import type { ApplicationListenEvent } from "@oak/oak/application";
 import { yellow } from "@std/fmt/colors";
+
 import { router } from "./router.ts";
 
 const app = new Application();
