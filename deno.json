@@ -14,7 +14,7 @@
     "@std/assert": "jsr:@std/assert@1.0.2",
     "@std/fmt": "jsr:@std/fmt@1.0.0",
     "@std/http": "jsr:@std/http@1.0.2",
-    "@std/http/user-agent": "jsr:@std/http@~0.223/user-agent",
+    "@std/http/user-agent": "jsr:@std/http@~1.0.0/user-agent",
     "@std/path": "jsr:@std/path@1.0.2"
   },
   "deploy": {
