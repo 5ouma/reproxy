@@ -1,12 +1,11 @@
-import type { RouterContext } from "@oak/oak";
 import { Octokit } from "@octokit/rest";
+import type { StatusCode } from "@std/http";
 
 import { getRepository, githubToken } from "../utils/env.ts";
 
-export async function getContent<R extends string>(
-  ctx: RouterContext<R>,
+export async function getContent(
   ref: string | undefined = undefined,
-): Promise<void> {
+): Promise<[string, StatusCode]> {
   const octokit = new Octokit({ auth: githubToken });
   const repository = getRepository();
 
@@ -19,10 +18,8 @@ export async function getContent<R extends string>(
       ref: ref,
     });
 
-    ctx.response.status = status;
-    ctx.response.body = data;
+    return [data.toString(), status];
   } catch (error) {
-    ctx.response.status = error.status;
-    ctx.response.body = `⚠️ ${ctx.response.status}: ${error.message}`;
+    return [`⚠️ ${error.status}: ${error.message}`, error.status];
   }
 }

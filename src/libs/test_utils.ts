@@ -1,3 +1,4 @@
+import { UserAgent } from "@std/http/user-agent";
 import type { Repository } from "./types.ts";
 
 export const testRepo: Repository = {
@@ -13,6 +14,8 @@ export const unknownRepo: Repository = {
 };
 
 export const testRef = "v1.0.0";
+
+export const testUserAgent = new UserAgent("Chrome/1.2.3");
 
 export function exportRepo(repository: Repository) {
   Deno.env.set("REPOSITORY_OWNER", repository.owner);

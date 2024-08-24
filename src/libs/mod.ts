@@ -1,2 +1,2 @@
-export * from "./middlewares/content.ts";
-export * from "./middlewares/redirect.ts";
+export * from "./middleware/content.ts";
+export * from "./middleware/redirect.ts";
