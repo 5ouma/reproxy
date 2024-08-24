@@ -1,27 +1,21 @@
 import { assertEquals } from "@std/assert";
-import { UserAgent } from "@std/http/user-agent";
 
 import { redirect } from "./redirect.ts";
-import { exportRepo, testRef, testRepo } from "../test_utils.ts";
+import { exportRepo, testRef, testRepo, testUserAgent } from "../test_utils.ts";
+import { getGitHubUrl } from "../utils/env.ts";
 
 Deno.test("Redirect Detection", async (t: Deno.TestContext) => {
   await t.step("normal", () => {
     exportRepo(testRepo);
-    const url: URL | null = redirect(new UserAgent("Chrome/1.2.3"));
+    const url: URL | null = redirect(testUserAgent);
 
-    assertEquals(
-      url?.toString(),
-      `https://github.com/${testRepo.owner}/${testRepo.name}/blob/master/${testRepo.path}`,
-    );
+    assertEquals(url, getGitHubUrl(testRepo));
   });
 
   await t.step("with ref", () => {
     exportRepo(testRepo);
-    const url: URL | null = redirect(new UserAgent("Chrome/1.2.3"), testRef);
+    const url: URL | null = redirect(testUserAgent, testRef);
 
-    assertEquals(
-      url?.toString(),
-      `https://github.com/${testRepo.owner}/${testRepo.name}/blob/${testRef}/${testRepo.path}`,
-    );
+    assertEquals(url, getGitHubUrl(testRepo, testRef));
   });
 });

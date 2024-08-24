@@ -1,9 +1,14 @@
 import { assertEquals } from "@std/assert";
-import { UserAgent } from "@std/http";
 import { STATUS_CODE } from "@std/http/status";
 
 import { app } from "./server.ts";
-import { exportRepo, testRef, testRepo } from "./libs/test_utils.ts";
+import {
+  exportRepo,
+  testRef,
+  testRepo,
+  testUserAgent,
+} from "./libs/test_utils.ts";
+import { getGitHubUrl } from "./libs/utils/env.ts";
 
 Deno.test("Serve", async (t: Deno.TestContext) => {
   await t.step("/", async () => {
@@ -16,12 +21,12 @@ Deno.test("Serve", async (t: Deno.TestContext) => {
   await t.step("/ (Redirect)", async () => {
     exportRepo(testRepo);
     const res: Response = await app.request("/", {
-      headers: { "User-Agent": new UserAgent("Chrome/1.2.3").toString() },
+      headers: { "User-Agent": testUserAgent.toString() },
     });
 
     assertEquals(
       res.headers.get("Location"),
-      `https://github.com/${testRepo.owner}/${testRepo.name}/blob/master/${testRepo.path}`,
+      getGitHubUrl(testRepo).toString(),
     );
     assertEquals(res.status, STATUS_CODE.PermanentRedirect);
   });
@@ -36,12 +41,12 @@ Deno.test("Serve", async (t: Deno.TestContext) => {
   await t.step("/:ref (Redirect)", async () => {
     exportRepo(testRepo);
     const res: Response = await app.request(`/${testRef}`, {
-      headers: { "User-Agent": new UserAgent("Chrome/1.2.3").toString() },
+      headers: { "User-Agent": testUserAgent.toString() },
     });
 
     assertEquals(
       res.headers.get("Location"),
-      `https://github.com/${testRepo.owner}/${testRepo.name}/blob/${testRef}/${testRepo.path}`,
+      getGitHubUrl(testRepo, testRef).toString(),
     );
     assertEquals(res.status, STATUS_CODE.PermanentRedirect);
   });
