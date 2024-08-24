@@ -1,12 +1,9 @@
-import type { RouterContext } from "@oak/oak";
-import { STATUS_CODE } from "@std/http/status";
-import { UserAgent } from "@std/http/user-agent";
+import type { UserAgent } from "@std/http/user-agent";
 import { join } from "@std/path";
 
 import { getRepository } from "../utils/env.ts";
 
-export function redirect<R extends string>(
-  ctx: RouterContext<R>,
+export function redirect(
   userAgent: UserAgent,
   ref: string = "master",
 ): boolean {
@@ -22,9 +19,5 @@ export function redirect<R extends string>(
     "https://github.com",
   );
 
-  if (!userAgent?.browser.name) return false;
-
-  ctx.response.status = STATUS_CODE.PermanentRedirect;
-  ctx.response.redirect(url);
-  return true;
+  return userAgent?.browser.name ? url : null;
 }

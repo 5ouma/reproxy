@@ -1,25 +1,36 @@
-import { Application } from "@oak/oak";
-import type { ApplicationListenEvent } from "@oak/oak/application";
-import { yellow } from "@std/fmt/colors";
+import { type Context, Hono } from "@hono/hono";
+import { STATUS_CODE } from "@std/http/status";
+import { UserAgent } from "@std/http/user-agent";
 
-import { router } from "./router.ts";
+import { getContent, redirect } from "./libs/mod.ts";
 
-const app = new Application();
+export const app = new Hono();
 
-app.use(router.routes());
-app.use(router.allowedMethods());
+app.get("/", async (ctx: Context) => {
+  const url: URL | null = redirect(
+    new UserAgent(ctx.req.header("User-Agent") ?? ""),
+  );
+  if (url) return ctx.redirect(url.toString(), STATUS_CODE.PermanentRedirect);
 
-app.addEventListener(
-  "listen",
-  ({ secure, hostname, port }: ApplicationListenEvent) => {
-    console.log(
-      `🔔 listening: ${
-        yellow(
-          `${secure ? "https" : "http"}://${hostname ?? "localhost"}:${port}`,
-        )
-      }`,
-    );
-  },
-);
+  const [data, status] = await getContent();
+  return ctx.text(data, status);
+});
 
-await app.listen({ port: 8080 });
+app.get("/:ref", async (ctx: Context) => {
+  const ref: string = ctx.req.param("ref");
+
+  const url: URL | null = redirect(
+    new UserAgent(ctx.req.header("User-Agent") ?? ""),
+    ref,
+  );
+  if (url) return ctx.redirect(url.toString(), STATUS_CODE.PermanentRedirect);
+
+  const [data, status] = await getContent(ref);
+  return ctx.text(data, status);
+});
+
+app.get("*", (ctx: Context) => {
+  return ctx.redirect("/", STATUS_CODE.SeeOther);
+});
+
+Deno.serve(app.fetch);
