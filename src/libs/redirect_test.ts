@@ -2,7 +2,7 @@ import { assertEquals } from "@std/assert";
 
 import { redirect } from "./redirect.ts";
 import { exportRepo, testRef, testRepo, testUserAgent } from "./test_utils.ts";
-import { getGitHubUrl } from "./env.ts";
+import { getGitHubUrl } from "./utils.ts";
 
 Deno.test("Redirect Detection", async (t: Deno.TestContext) => {
   await t.step("normal", () => {

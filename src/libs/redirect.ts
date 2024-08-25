@@ -1,6 +1,7 @@
 import type { UserAgent } from "@std/http/user-agent";
 
-import { getGitHubUrl, getRepository } from "./env.ts";
+import { getRepository } from "./env.ts";
+import { getGitHubUrl } from "./utils.ts";
 
 export function redirect(
   userAgent: UserAgent,
