@@ -1,8 +1,9 @@
 import type { UserAgent } from "@std/http/user-agent";
 
-import { getGitHubUrl, getRepository } from "../utils/env.ts";
+import { getRepository } from "./env.ts";
+import { getGitHubUrl } from "./utils.ts";
 
-export function redirect(
+export function checkRedirect(
   userAgent: UserAgent,
   ref: string = "master",
 ): URL | null {
