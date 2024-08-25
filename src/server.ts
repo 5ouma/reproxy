@@ -8,15 +8,14 @@ export const app = new Hono();
 app
   .get("/:ref?", async (ctx: Context) => {
     const ref: string = ctx.req.param("ref");
-
     const url: URL | null = redirect(
       new UserAgent(ctx.req.header("User-Agent") ?? ""),
       ref,
     );
-    if (url) return ctx.redirect(url.toString(), STATUS_CODE.PermanentRedirect);
 
-    const [data, status] = await getContent(ref);
-    return ctx.text(data, status);
+    return url
+      ? ctx.redirect(url.toString(), STATUS_CODE.PermanentRedirect)
+      : ctx.text(...await getContent(ref));
   })
   .get("*", (ctx: Context) => {
     return ctx.redirect("/", STATUS_CODE.SeeOther);
