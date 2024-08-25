@@ -1,6 +1,6 @@
 import { join } from "@std/path";
 
-import type { Repository } from "../types.ts";
+import type { Repository } from "./types.ts";
 
 export function getRepository(): Repository {
   const repository: Repository = {

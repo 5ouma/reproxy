@@ -8,7 +8,7 @@ import {
   testRepo,
   testUserAgent,
 } from "./libs/test_utils.ts";
-import { getGitHubUrl } from "./libs/utils/env.ts";
+import { getGitHubUrl } from "./libs/env.ts";
 
 Deno.test("Serve", async (t: Deno.TestContext) => {
   await t.step("/", async () => {

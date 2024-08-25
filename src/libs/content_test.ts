@@ -2,7 +2,7 @@ import { assertEquals, assertExists, assertStringIncludes } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
 
 import { getContent } from "./content.ts";
-import { exportRepo, testRef, testRepo, unknownRepo } from "../test_utils.ts";
+import { exportRepo, testRef, testRepo, unknownRepo } from "./test_utils.ts";
 
 Deno.test("Get Content", async (t: Deno.TestContext) => {
   await t.step("normal", async () => {

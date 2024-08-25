@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/rest";
 import type { StatusCode } from "@std/http";
 
-import { getRepository, githubToken } from "../utils/env.ts";
+import { getRepository, githubToken } from "./env.ts";
 
 export async function getContent(
   ref: string | undefined = undefined,
