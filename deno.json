@@ -1,5 +1,4 @@
 {
-  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "fmt": { "exclude": ["LICENSE", ".github/**/*.md"] },
   "tasks": {
     "run": "deno run --env='.env' --allow-env='REPOSITORY_OWNER,REPOSITORY_NAME,REPOSITORY_PATH,GITHUB_TOKEN' --allow-net='0.0.0.0,api.github.com'",
