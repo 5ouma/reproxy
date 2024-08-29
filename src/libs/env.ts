@@ -1,5 +1,15 @@
 import type { Repository } from "./types.ts";
 
+/**
+ * Get the repository details from the environment variables.
+ *
+ * @returns {Repository} The repository type
+ *
+ * @example
+ * ```ts
+ * const repository = getRepository();
+ * ```
+ */
 export function getRepository(): Repository {
   const repository: Repository = {
     owner: Deno.env.get("REPOSITORY_OWNER") ?? "",
@@ -16,4 +26,12 @@ export function getRepository(): Repository {
   return repository;
 }
 
+/**
+ * The GitHub token from the environment variables.
+ *
+ * @example
+ * ```ts
+ * const token = githubToken;
+ * ```
+ */
 export const githubToken: string | undefined = Deno.env.get("GITHUB_TOKEN");
