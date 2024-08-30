@@ -5,7 +5,7 @@
 **🚚 Deliver any files in the GitHub repository**
 
 [![GitHub Release](https://img.shields.io/github/v/release/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/releases)
-[![JSR](https://jsr.io/badges/@5ouma/reproxy?style=flat-square)](https://jsr.io/@5ouma/opmlreproxy)
+[![JSR](https://jsr.io/badges/@5ouma/reproxy?style=flat-square)](https://jsr.io/@5ouma/reproxy)
 <br />
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/5ouma/reproxy?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/5ouma/reproxy?style=flat-square)
