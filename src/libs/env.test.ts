@@ -1,7 +1,7 @@
 import { assertEquals } from "@std/assert";
 
 import { getRepository } from "./env.ts";
-import { clearRepo, exportRepo, testRepo } from "../test_utils.ts";
+import { clearRepo, exportRepo, testRepo } from "./test_utils.ts";
 
 Deno.test("Get Repository Env", async (t: Deno.TestContext) => {
   await t.step("Normal", () => {

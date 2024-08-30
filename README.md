@@ -5,12 +5,15 @@
 **🚚 Deliver any files in the GitHub repository**
 
 [![GitHub Release](https://img.shields.io/github/v/release/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/releases)
+[![JSR](https://jsr.io/badges/@5ouma/reproxy?style=flat-square)](https://jsr.io/@5ouma/opmlreproxy)
+<br />
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/5ouma/reproxy?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/5ouma/reproxy?style=flat-square)
 [![GitHub last commit](https://img.shields.io/github/last-commit/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/commit/HEAD)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/commits/main)
 <br />
 [![Test](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/test.yml?label=test&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/test.yml)
+[![Release](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/release.yml?label=release&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/release.yml)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/5ouma/reproxy/main.svg?style=flat-square)](https://results.pre-commit.ci/latest/github/5ouma/reproxy/main)
 [![codecov](https://codecov.io/github/5ouma/reproxy/graph/badge.svg?token=OQB55KXJIL)](https://codecov.io/github/5ouma/reproxy)
 
@@ -34,35 +37,30 @@ To do this, simply add the ref name to the sub-directory.
 
 ## 🔧 Setup
 
-You can host your file on [Deno Deploy](https://deno.com/deploy).
+### 💻 On Local
 
-### 💪 Manual Deployment
-
-1. Clone this repository
-
-   ```sh
-   git clone https://github.com/5ouma/reproxy.git
-   ```
-
-2. Copy the [`.env.tmpl`](../.env.tmpl) to `.env` and edit as you prefer
+1. Copy the [`.env.tmpl`](./.env.tmpl) to `.env` and edit as you prefer
 
    > [🌍 Environment Variables](#-environment-variables)
 
-3. Install [Deno](https://deno.com) and [deployctl](https://docs.deno.com/deploy/manual/deployctl).
-
-4. Deploy to Deno Deploy
+2. Run this command
 
    ```sh
-   deployctl deploy --prod --env-file='.env'
+   deno run -A jsr:@5ouma/reproxy/serve
    ```
 
 <br />
 
-### ⚙️ Automatic Deployment
+### 🦕 Use [Deno Deploy](https://deno.com/deploy)
 
-1. [Fork this repository](https://github.com/5ouma/reproxy/fork)
+1. [Create a new playground](https://dash.deno.com)
 
-2. [Create a new project](https://dash.deno.com/new_project) with your forked repository
+2. Replace the default code with this
+
+   ```ts
+   import { app } from "jsr:@5ouma/reproxy";
+   Deno.serve(app.fetch);
+   ```
 
 3. Set the environment variables
    (_Don't forget!!_)
@@ -79,13 +77,11 @@ You can host your file on [Deno Deploy](https://deno.com/deploy).
    git clone https://github.com/5ouma/reproxy.git
    ```
 
-2. Copy the [`.env.template`](../.env.template) to `.env` and edit as you prefer
+2. Copy the [`.env.tmpl`](./.env.tmpl) to `.env` and edit as you prefer
 
    > [🌍 Environment Variables](#-environment-variables)
 
-3. Install [Deno](https://deno.com)
-
-4. Run the [`server.ts`](../src/server.ts) via these task runners
+3. Run the [`server.ts`](./src/server.ts) via these task runners
 
    ```sh
    # For production
@@ -103,10 +99,10 @@ You can host your file on [Deno Deploy](https://deno.com/deploy).
 
 |        Name        | Required |
 | :----------------: | :------: |
-| `REPOSITORY_OWNER` |   true   |
-| `REPOSITORY_NAME`  |   true   |
-| `REPOSITORY_PATH`  |   true   |
-|  [`GITHUB_TOKEN`]  |  false   |
+| `REPOSITORY_OWNER` |   yes    |
+| `REPOSITORY_NAME`  |   yes    |
+| `REPOSITORY_PATH`  |   yes    |
+|  [`GITHUB_TOKEN`]  |    no    |
 
 > [!NOTE]
 > You need to add [`GITHUB_TOKEN`] if you want to:
@@ -134,5 +130,5 @@ You can host your file on [Deno Deploy](https://deno.com/deploy).
 
 I happily welcome your contributions!
 Before you contribute,
-I would recommend reading [CONTRIBUTING.md](./CONTRIBUTING.md)
+I would recommend reading [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 for a better development experience.
