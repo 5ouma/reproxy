@@ -1,11 +1,11 @@
 import type { UserAgent } from "@std/http/user-agent";
+export type { UserAgent };
 
 import { getRepository } from "./env.ts";
 import { getGitHubUrl } from "./utils.ts";
 
 /**
  * Check if accessed from a browser and return the GitHub URL.
- * @internal
  *
  * @param userAgent The user agent accessed from
  * @param ref="master" The branch, tag, or commit hash

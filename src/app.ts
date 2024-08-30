@@ -1,4 +1,5 @@
 import { type Context, Hono } from "@hono/hono";
+export type { Hono };
 import { STATUS_CODE } from "@std/http/status";
 import { UserAgent } from "@std/http/user-agent";
 

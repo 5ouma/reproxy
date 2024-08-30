@@ -1,11 +1,11 @@
 import { Octokit } from "@octokit/rest";
 import type { StatusCode } from "@std/http";
+export type { StatusCode };
 
 import { getRepository, githubToken } from "./env.ts";
 
 /**
  * Get the content of the repository.
- * @internal
  *
  * @param ref The name of the branch, tag or commit hash
  * @returns The content of the repository and the status code
