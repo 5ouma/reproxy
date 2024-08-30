@@ -1,5 +1,6 @@
 import { type Context, Hono } from "@hono/hono";
 export type { Hono };
+import { logger } from "@hono/hono/logger";
 import { STATUS_CODE } from "@std/http/status";
 import { UserAgent } from "@std/http/user-agent";
 
@@ -20,6 +21,7 @@ import { checkRedirect, getContent } from "./libs/mod.ts";
  * ```
  */
 export const app: Hono = new Hono();
+app.use(logger());
 app
   .get("/:ref?", async (ctx: Context) => {
     const ref: string = ctx.req.param("ref");
