@@ -2,13 +2,13 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "jsr:@hono/hono@4.5.8": "jsr:@hono/hono@4.5.8",
-      "jsr:@std/assert@1.0.2": "jsr:@std/assert@1.0.2",
+      "jsr:@hono/hono@4.5.10": "jsr:@hono/hono@4.5.10",
+      "jsr:@std/assert@1.0.3": "jsr:@std/assert@1.0.3",
       "jsr:@std/cli@^1.0.3": "jsr:@std/cli@1.0.4",
       "jsr:@std/encoding@^1.0.1": "jsr:@std/encoding@1.0.3",
       "jsr:@std/fmt@^1.0.0": "jsr:@std/fmt@1.0.1",
       "jsr:@std/http@1.0.2": "jsr:@std/http@1.0.2",
-      "jsr:@std/internal@^1.0.1": "jsr:@std/internal@1.0.2",
+      "jsr:@std/internal@^1.0.2": "jsr:@std/internal@1.0.2",
       "jsr:@std/media-types@^1.0.2": "jsr:@std/media-types@1.0.3",
       "jsr:@std/net@^1.0.0": "jsr:@std/net@1.0.1",
       "jsr:@std/path@1.0.2": "jsr:@std/path@1.0.2",
@@ -17,13 +17,13 @@
       "npm:@octokit/rest@21.0.2": "npm:@octokit/rest@21.0.2_@octokit+core@6.1.2"
     },
     "jsr": {
-      "@hono/hono@4.5.8": {
-        "integrity": "60f5b4c61edae2016022d6087b4fc381f378d337f046f56e00a3a3512c7e9c16"
+      "@hono/hono@4.5.10": {
+        "integrity": "801fe47e233b53480322f7a17c621ceb5e9b4335e5fdc14cfc0c7696e8396c34"
       },
-      "@std/assert@1.0.2": {
-        "integrity": "ccacec332958126deaceb5c63ff8b4eaf9f5ed0eac9feccf124110435e59e49c",
+      "@std/assert@1.0.3": {
+        "integrity": "b0d03ce1ced880df67132eea140623010d415848df66f6aa5df76507ca7c26d8",
         "dependencies": [
-          "jsr:@std/internal@^1.0.1"
+          "jsr:@std/internal@^1.0.2"
         ]
       },
       "@std/cli@1.0.4": {
@@ -162,8 +162,8 @@
   "remote": {},
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@4.5.8",
-      "jsr:@std/assert@1.0.2",
+      "jsr:@hono/hono@4.5.10",
+      "jsr:@std/assert@1.0.3",
       "jsr:@std/http@1.0.2",
       "jsr:@std/path@1.0.2",
       "npm:@octokit/rest@21.0.2"
