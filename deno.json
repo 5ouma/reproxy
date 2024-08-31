@@ -1,7 +1,7 @@
 {
   "name": "@5ouma/reproxy",
   "version": "1.0.0",
-  "exports": { ".": "./src/app.ts", "./serve": "./src/server.ts" },
+  "exports": { ".": "./src/server.ts" },
   "publish": {
     "include": ["LICENSE", "README.md", "deno.json", "src/"],
     "exclude": ["**/*.test.ts", "src/libs/test_utils.ts"]

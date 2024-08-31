@@ -1,7 +1,7 @@
 import { assertEquals } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
 
-import { app } from "./app.ts";
+import { app } from "./server.ts";
 import {
   exportRepo,
   testRef,
