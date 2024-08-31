@@ -47,7 +47,7 @@ To do this, simply add the ref name to the sub-directory.
 2. Run this command
 
    ```sh
-   deno run -A jsr:@5ouma/reproxy/serve
+   deno run -A jsr:@5ouma/reproxy
    ```
 
 <br />
@@ -59,8 +59,7 @@ To do this, simply add the ref name to the sub-directory.
 2. Replace the default code with this
 
    ```ts
-   import { app } from "jsr:@5ouma/reproxy";
-   Deno.serve(app.fetch);
+   import "jsr:@5ouma/reproxy";
    ```
 
 3. Set the environment variables
