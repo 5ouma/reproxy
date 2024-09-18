@@ -13,7 +13,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/commit/HEAD)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/commits/main)
 <br />
-[![Test](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/test.yml?label=test&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/test.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/ci.yml?label=ci&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/release.yml?label=release&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/release.yml)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/5ouma/reproxy/main.svg?style=flat-square)](https://results.pre-commit.ci/latest/github/5ouma/reproxy/main)
 [![codecov](https://codecov.io/github/5ouma/reproxy/graph/badge.svg?token=OQB55KXJIL)](https://codecov.io/github/5ouma/reproxy)
