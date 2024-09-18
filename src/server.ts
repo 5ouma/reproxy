@@ -51,8 +51,6 @@ app
       ? ctx.redirect(url.toString(), STATUS_CODE.PermanentRedirect)
       : ctx.text(...await getContent(repository, ref, GITHUB_TOKEN));
   })
-  .get("*", (ctx: Context) => {
-    return ctx.redirect("/", STATUS_CODE.SeeOther);
-  });
+  .get("*", (ctx: Context) => ctx.redirect("/", STATUS_CODE.SeeOther));
 
 Deno.serve(app.fetch);
