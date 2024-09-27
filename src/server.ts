@@ -4,7 +4,8 @@ import { logger } from "@hono/hono/logger";
 import { STATUS_CODE } from "@std/http/status";
 import { UserAgent } from "@std/http/user-agent";
 
-import { checkRedirect, getContent } from "./libs/mod.ts";
+import { checkRedirect, getContent, type Repository } from "./libs/mod.ts";
+import { getRepository, githubToken } from "./libs/env.ts";
 
 /**
  * The Hono application for this project.
@@ -24,15 +25,18 @@ export const app: Hono = new Hono();
 app.use(logger());
 app
   .get("/:ref?", async (ctx: Context) => {
+    const repository: Repository = getRepository();
     const ref: string = ctx.req.param("ref");
+
     const url: URL | null = checkRedirect(
       new UserAgent(ctx.req.header("User-Agent") ?? ""),
+      repository,
       ref,
     );
 
     return url
       ? ctx.redirect(url.toString(), STATUS_CODE.PermanentRedirect)
-      : ctx.text(...await getContent(ref));
+      : ctx.text(...await getContent(repository, ref, githubToken));
   })
   .get("*", (ctx: Context) => {
     return ctx.redirect("/", STATUS_CODE.SeeOther);

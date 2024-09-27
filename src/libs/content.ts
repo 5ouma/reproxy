@@ -2,7 +2,7 @@ import { Octokit } from "@octokit/rest";
 import type { StatusCode } from "@std/http";
 export type { StatusCode };
 
-import { getRepository, githubToken } from "./env.ts";
+import type { Repository } from "./types.ts";
 
 /**
  * Get the content of the repository.
@@ -12,29 +12,51 @@ import { getRepository, githubToken } from "./env.ts";
  *
  * @example Use the default branch
  * ```ts
- * const [content, status] = await getContent();
+ * const repository: Repository = {
+ *   owner: "denoland",
+ *   name: "deno",
+ *   path: "README.md",
+ * };
+ * const [content, status] = await getContent(repository);
  * ```
  * @example Use a specific branch
  * ```ts
+ * const repository: Repository = {
+ *   owner: "denoland",
+ *   name: "deno",
+ *   path: "README.md",
+ * };
  * const branch = "main";
- * const [content, status] = await getContent(branch);
+ * const [content, status] = await getContent(repository, branch);
  * ```
  * @example Use a specific tag
  * ```ts
+ * const repository: Repository = {
+ *   owner: "denoland",
+ *   name: "deno",
+ *   path: "README.md",
+ * };
  * const tag = "v1.0.0";
- * const [content, status] = await getContent(tag);
+ * const [content, status] = await getContent(repository, tag);
  * ```
  * @example Use a specific commit
  * ```ts
+ * const repository: Repository = {
+ *   owner: "denoland",
+ *   name: "deno",
+ *   path: "README.md",
+ * };
  * const commit = "a1b2c3d4e5f6";
- * const [content, status] = await getContent(commit);
+ * const [content, status] = await getContent(repository, commit);
  * ```
  */
+
 export async function getContent(
+  repository: Repository,
   ref: string | undefined = undefined,
+  token: string | undefined = undefined,
 ): Promise<[string, StatusCode]> {
-  const octokit = new Octokit({ auth: githubToken });
-  const repository = getRepository();
+  const octokit = new Octokit({ auth: token });
 
   try {
     const { status, data } = await octokit.rest.repos.getContent({
