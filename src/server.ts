@@ -55,4 +55,4 @@ app
     return ctx.redirect("/", STATUS_CODE.SeeOther);
   });
 
-Deno.serve(app.fetch);
+if (typeof Deno !== "undefined") Deno.serve(app.fetch);
