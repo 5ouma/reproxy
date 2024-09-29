@@ -21,7 +21,8 @@ import { checkRedirect, getContent, type Repository } from "./libs/mod.ts";
  * });
  * ```
  */
-export const app: Hono = new Hono();
+const app: Hono = new Hono();
+export default app;
 app.use(logger());
 app
   .get("/:ref?", async (ctx: Context) => {
@@ -55,4 +56,4 @@ app
     return ctx.redirect("/", STATUS_CODE.SeeOther);
   });
 
-Deno.serve(app.fetch);
+if (typeof Deno !== "undefined") Deno.serve(app.fetch);
