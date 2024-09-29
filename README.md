@@ -59,7 +59,8 @@ To do this, simply add the ref name to the sub-directory.
      1. Add this code to the `index.ts`
 
         ```ts
-        import "@5ouma/reproxy";
+        import { app } from "@5ouma/reproxy";
+        export default app;
         ```
 
      2. Run these commands
@@ -97,7 +98,8 @@ To do this, simply add the ref name to the sub-directory.
 2. Add this code to the `index.ts`
 
    ```ts
-   import "@5ouma/reproxy";
+   import { app } from "@5ouma/reproxy";
+   export default app;
    ```
 
 3. Deploy with these commands
