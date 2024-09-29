@@ -51,7 +51,7 @@ To do this, simply add the ref name to the sub-directory.
      1. Run this command
 
         ```sh
-        deno run -A jsr:@5ouma/reproxy
+        deno run -A --env-file='.env' jsr:@5ouma/reproxy
         ```
 
    - [🍞 Bun](https://bun.sh)
