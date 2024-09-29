@@ -44,11 +44,30 @@ To do this, simply add the ref name to the sub-directory.
 
    > [🌍 Environment Variables](#-environment-variables)
 
-2. Run this command
+2. Follow the steps depending on the runtime
 
-   ```sh
-   deno run -A jsr:@5ouma/reproxy
-   ```
+   - [🦕 Deno](https://deno.com)
+
+     1. Run this command
+
+        ```sh
+        deno run -A jsr:@5ouma/reproxy
+        ```
+
+   - [🍞 Bun](https://bun.sh)
+
+     1. Add this code to the `index.ts`
+
+        ```ts
+        import "@5ouma/reproxy";
+        ```
+
+     2. Run these commands
+
+        ```sh
+        bunx jsr add @5ouma/reproxy
+        bun run index.ts
+        ```
 
 <br />
 
@@ -66,6 +85,27 @@ To do this, simply add the ref name to the sub-directory.
    (_Don't forget!!_)
 
    > [🌍 Environment Variables](#-environment-variables)
+
+<br />
+
+### ☁️ Use [Cloudflare Workers](https://workers.cloudflare.com)
+
+1. Set up the `wrangler.toml`
+
+   > [🌍 Environment Variables](#-environment-variables)
+
+2. Add this code to the `index.ts`
+
+   ```ts
+   import "@5ouma/reproxy";
+   ```
+
+3. Deploy with these commands
+
+   ```sh
+   npx jsr add @5ouma/reproxy
+   npx wrangler deploy index.ts
+   ```
 
 <br /><br />
 
