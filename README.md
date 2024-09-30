@@ -89,7 +89,7 @@ To do this, simply add the ref name to the sub-directory.
 
 <br />
 
-### ☁️ Use [Cloudflare Workers](https://workers.cloudflare.com)
+### ⛅️ Use [Cloudflare Workers](https://workers.cloudflare.com)
 
 1. Set up the `wrangler.toml`
 
