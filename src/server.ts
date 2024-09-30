@@ -21,7 +21,8 @@ import { checkRedirect, getContent, type Repository } from "./libs/mod.ts";
  * });
  * ```
  */
-export const app: Hono = new Hono();
+const app: Hono = new Hono();
+export default app;
 app.use(logger());
 app
   .get("/:ref?", async (ctx: Context) => {
