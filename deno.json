@@ -8,10 +8,10 @@
   },
   "fmt": { "exclude": ["LICENSE", "README.md", ".github/**/*.md"] },
   "tasks": {
-    "run": "deno run --env-file='.env' -EN='0.0.0.0,api.github.com'",
+    "run": "deno run --env-file='.env' -EN='api.github.com'",
     "start": "deno task run src/server.ts",
     "dev": "deno task run --watch src/server.ts",
-    "test": "deno test --doc -EN='0.0.0.0,api.github.com' --parallel --shuffle",
+    "test": "deno test --doc -EN='api.github.com' --parallel --shuffle",
     "cov": "deno task test --coverage && deno coverage --lcov > coverage.lcov"
   },
   "imports": {
