@@ -11,6 +11,8 @@ import type { Repository } from "./types.ts";
  *
  * @example
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "5ouma",
  *   name: "reproxy",

@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/rest";
+import type { RequestError } from "@octokit/request-error";
 import type { StatusCode } from "@std/http";
 export type { StatusCode };
 
@@ -12,6 +13,8 @@ import type { Repository } from "./types.ts";
  *
  * @example Use the default branch
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -21,6 +24,8 @@ import type { Repository } from "./types.ts";
  * ```
  * @example Use a specific branch
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -31,6 +36,8 @@ import type { Repository } from "./types.ts";
  * ```
  * @example Use a specific tag
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -41,6 +48,8 @@ import type { Repository } from "./types.ts";
  * ```
  * @example Use a specific commit
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -69,6 +78,10 @@ export async function getContent(
 
     return [data.toString(), status];
   } catch (error) {
-    return [`⚠️ ${error.status}: ${error.message}`, error.status];
+    const requestError = error as RequestError;
+    return [
+      `⚠️ ${requestError.status}: ${requestError.message}`,
+      requestError.status as StatusCode,
+    ];
   }
 }

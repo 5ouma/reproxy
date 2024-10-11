@@ -13,6 +13,9 @@ import { getGitHubUrl } from "./utils.ts";
  *
  * @example Use the default branch
  * ```ts
+ * import { UserAgent } from "@std/http/user-agent";
+ * import type { Repository } from "./types.ts";
+ *
  * const userAgent = new UserAgent("Chrome/1.2.3");
  * const repository: Repository = {
  *   owner: "denoland",
@@ -23,6 +26,9 @@ import { getGitHubUrl } from "./utils.ts";
  * ```
  * @example Use a specific branch
  * ```ts
+ * import { UserAgent } from "@std/http/user-agent";
+ * import type { Repository } from "./types.ts";
+ *
  * const userAgent = new UserAgent("Chrome/1.2.3");
  * const repository: Repository = {
  *   owner: "denoland",
@@ -34,6 +40,9 @@ import { getGitHubUrl } from "./utils.ts";
  * ```
  * @example Use a specific tag
  * ```ts
+ * import { UserAgent } from "@std/http/user-agent";
+ * import type { Repository } from "./types.ts";
+ *
  * const userAgent = new UserAgent("Chrome/1.2.3");
  * const repository: Repository = {
  *   owner: "denoland",
@@ -45,6 +54,9 @@ import { getGitHubUrl } from "./utils.ts";
  * ```
  * @example Use a specific commit
  * ```ts
+ * import { UserAgent } from "@std/http/user-agent";
+ * import type { Repository } from "./types.ts";
+ *
  * const userAgent = new UserAgent("Chrome/1.2.3");
  * const repository: Repository = {
  *   owner: "denoland",

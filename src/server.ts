@@ -16,6 +16,8 @@ import { checkRedirect, getContent, type Repository } from "./libs/mod.ts";
  * ```
  * @example Access with a user agent
  * ```ts
+ * import { UserAgent } from "@std/http/user-agent";
+ *
  * const res: Response = await app.request("/", {
  *   headers: { "User-Agent": new UserAgent("Chrome/1.2.3").toString() },
  * });
