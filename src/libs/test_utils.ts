@@ -57,7 +57,13 @@ export const testUserAgent = new UserAgent("Chrome/1.2.3");
  *
  * @example
  * ```ts
- * const repository = new Repository("5ouma", "reproxy", "src/server.ts");
+ * import type { Repository } from "./types.ts";
+ *
+ * const repository: Repository = {
+ *   owner: "denoland",
+ *   name: "deno",
+ *   path: "README.md",
+ * };
  * exportRepo(repository);
  * ```
  */

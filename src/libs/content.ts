@@ -1,5 +1,6 @@
 import { Octokit } from "@octokit/rest";
-import type { StatusCode } from "@std/http";
+import { RequestError } from "@octokit/request-error";
+import { STATUS_CODE, type StatusCode } from "@std/http";
 export type { StatusCode };
 
 import type { Repository } from "./types.ts";
@@ -12,6 +13,8 @@ import type { Repository } from "./types.ts";
  *
  * @example Use the default branch
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -21,6 +24,8 @@ import type { Repository } from "./types.ts";
  * ```
  * @example Use a specific branch
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -31,6 +36,8 @@ import type { Repository } from "./types.ts";
  * ```
  * @example Use a specific tag
  * ```ts
+ * import { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -41,6 +48,8 @@ import type { Repository } from "./types.ts";
  * ```
  * @example Use a specific commit
  * ```ts
+ * import type { Repository } from "./types.ts";
+ *
  * const repository: Repository = {
  *   owner: "denoland",
  *   name: "deno",
@@ -69,6 +78,14 @@ export async function getContent(
 
     return [data.toString(), status];
   } catch (error) {
-    return [`⚠️ ${error.status}: ${error.message}`, error.status];
+    return error instanceof RequestError
+      ? [
+        `⚠️ ${error.status}: ${error.message}`,
+        error.status as StatusCode,
+      ]
+      : [
+        `⚠️ ${STATUS_CODE.InternalServerError}: unknown error has occurred`,
+        STATUS_CODE.InternalServerError,
+      ];
   }
 }
