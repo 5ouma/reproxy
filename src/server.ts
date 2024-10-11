@@ -55,5 +55,3 @@ app
   .get("*", (ctx: Context) => {
     return ctx.redirect("/", STATUS_CODE.SeeOther);
   });
-
-if (typeof Deno !== "undefined") Deno.serve(app.fetch);

@@ -36,7 +36,7 @@ To do this, simply add the ref name to the sub-directory.
 
 <br /><br />
 
-## 🔧 Setup
+## 📊 Usage
 
 ### 💻 On Local
 
@@ -51,7 +51,7 @@ To do this, simply add the ref name to the sub-directory.
      1. Run this command
 
         ```sh
-        deno run -A --env-file='.env' jsr:@5ouma/reproxy
+        deno serve -A --env-file='.env' jsr:@5ouma/reproxy
         ```
 
    - [🍞 Bun](https://bun.sh)
@@ -78,7 +78,7 @@ To do this, simply add the ref name to the sub-directory.
 2. Replace the default code with this
 
    ```ts
-   import "jsr:@5ouma/reproxy";
+   export { default } from "jsr:@5ouma/reproxy";
    ```
 
 3. Set the environment variables
