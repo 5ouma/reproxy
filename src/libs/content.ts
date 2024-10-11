@@ -1,6 +1,6 @@
 import { Octokit } from "@octokit/rest";
-import { RequestError } from "@octokit/request-error";
-import { STATUS_CODE, type StatusCode } from "@std/http";
+import type { RequestError } from "@octokit/request-error";
+import type { StatusCode } from "@std/http";
 export type { StatusCode };
 
 import type { Repository } from "./types.ts";
@@ -78,14 +78,10 @@ export async function getContent(
 
     return [data.toString(), status];
   } catch (error) {
-    return error instanceof RequestError
-      ? [
-        `⚠️ ${error.status}: ${error.message}`,
-        error.status as StatusCode,
-      ]
-      : [
-        `⚠️ ${STATUS_CODE.InternalServerError}: unknown error has occurred`,
-        STATUS_CODE.InternalServerError,
-      ];
+    const requestError = error as RequestError;
+    return [
+      `⚠️ ${requestError.status}: ${requestError.message}`,
+      requestError.status as StatusCode,
+    ];
   }
 }
