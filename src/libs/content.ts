@@ -36,7 +36,7 @@ import type { Repository } from "./types.ts";
  * ```
  * @example Use a specific tag
  * ```ts
- * import { Repository } from "./types.ts";
+ * import type { Repository } from "./types.ts";
  *
  * const repository: Repository = {
  *   owner: "denoland",
