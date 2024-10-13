@@ -6,7 +6,6 @@
     "include": ["LICENSE", "README.md", "deno.json", "src/"],
     "exclude": ["**/*.test.ts", "src/libs/test_utils.ts"]
   },
-  "fmt": { "exclude": ["LICENSE", "README.md", ".github/**/*.md"] },
   "tasks": {
     "run": "deno run --env-file='.env' -EN='api.github.com'",
     "start": "deno task run src/server.ts",

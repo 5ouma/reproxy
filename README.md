@@ -24,15 +24,16 @@
 
 ## 💡 Concepts
 
-You can host your specific file on the GitHub repository.
-The usage I assume is for one-line scripts.
-(i.e. dotfiles or some install scripts, like `curl https://example.com | sh`)
+You can host your specific file on the GitHub repository. The usage I assume is
+for one-line scripts. (i.e. dotfiles or some install scripts, like
+`curl https://example.com | sh`)
 
-If you access from browsers, you'll redirected to the GitHub page, not a raw file.
+If you access from browsers, you'll redirected to the GitHub page, not a raw
+file.
 
-For the development or testing, you can access to the different branches or tags.
-To do this, simply add the ref name to the sub-directory.
-(i.e. `curl https://example.com/ref | sh`)
+For the development or testing, you can access to the different branches or
+tags. To do this, simply add the ref name to the sub-directory. (i.e.
+`curl https://example.com/ref | sh`)
 
 <br /><br />
 
@@ -81,8 +82,7 @@ To do this, simply add the ref name to the sub-directory.
    export { default } from "jsr:@5ouma/reproxy";
    ```
 
-3. Set the environment variables
-   (_Don't forget!!_)
+3. Set the environment variables (_Don't forget!!_)
 
    > [🌍 Environment Variables](#-environment-variables)
 
@@ -168,7 +168,6 @@ To do this, simply add the ref name to the sub-directory.
 
 ## 🎽 Contributing
 
-I happily welcome your contributions!
-Before you contribute,
-I would recommend reading [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
-for a better development experience.
+I happily welcome your contributions! Before you contribute, I would recommend
+reading [CONTRIBUTING.md](./.github/CONTRIBUTING.md) for a better development
+experience.
