@@ -69,6 +69,24 @@ To do this, simply add the ref name to the sub-directory.
         bun run index.ts
         ```
 
+   - [🐢 Node.js](https://nodejs.org)
+
+     1. Add this code to the `index.js`
+
+        ```js
+        import { serve } from "@hono/node-server";
+        import app from "@5ouma/reproxy";
+        serve(app);
+        ```
+
+     2. Run these commands
+
+        ```sh
+        npm install @hono/node-server
+        npx jsr add @5ouma/reproxy
+        node run index.js
+        ```
+
 <br />
 
 ### 🦕 Use [Deno Deploy](https://deno.com/deploy)
