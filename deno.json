@@ -7,9 +7,9 @@
     "exclude": ["**/*.test.ts", "src/libs/test_utils.ts"]
   },
   "tasks": {
-    "run": "deno run --env-file='.env' -EN='api.github.com'",
-    "start": "deno task run src/server.ts",
-    "dev": "deno task run --watch src/server.ts",
+    "serve": "deno serve --env-file='.env' -EN='api.github.com'",
+    "start": "deno task serve src/server.ts",
+    "dev": "deno task serve --watch src/server.ts",
     "test": "deno test --doc -EN='api.github.com' --parallel --shuffle",
     "cov": "deno task test --coverage && deno coverage --lcov > coverage.lcov"
   },
