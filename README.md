@@ -74,7 +74,7 @@ tags. To do this, simply add the ref name to the sub-directory. (i.e.
 
      1. Add this code to the `index.js`
 
-        ```js
+        ```js ignore
         import { serve } from "@hono/node-server";
         import app from "@5ouma/reproxy";
         serve(app);
