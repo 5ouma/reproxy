@@ -11,7 +11,7 @@
     "start": "deno task serve src/server.ts",
     "dev": "deno task serve --watch src/server.ts",
     "test": "deno test --doc -EN='api.github.com' --parallel --shuffle",
-    "cov": "deno task test --coverage && deno coverage --lcov > coverage.lcov"
+    "test:ci": "deno task test --coverage --junit-path='junit.xml' && deno coverage --lcov > coverage.lcov"
   },
   "imports": {
     "@hono/hono": "jsr:@hono/hono@4.6.3",
