@@ -1,3 +1,4 @@
-/.env
-/coverage.lcov
-/coverage
+.env
+coverage.lcov
+coverage/
+junit.xml
