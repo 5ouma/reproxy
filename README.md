@@ -15,7 +15,7 @@
 <br />
 [![CI](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/ci.yml?label=ci&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/release.yml?label=release&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/release.yml)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/5ouma/reproxy/main.svg?style=flat-square)](https://results.pre-commit.ci/latest/github/5ouma/reproxy/main)
+[![pre-commit](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/pre-commit.yml?label=pre-commit&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/pre-commit.yml)
 [![codecov](https://codecov.io/github/5ouma/reproxy/graph/badge.svg)](https://codecov.io/github/5ouma/reproxy)
 
 </div>
