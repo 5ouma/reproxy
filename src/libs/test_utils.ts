@@ -7,27 +7,25 @@ import type { Repository } from "./types.ts";
  *
  * @example
  * ```ts
- * const repository = testRepo;
+ * const repository = testRepo.normal;
  * ```
- */
-export const testRepo: Repository = {
-  owner: "denoland",
-  name: "deno",
-  path: "README.md",
-};
-
-/**
- * Sample unknown repository for test.
  *
  * @example
  * ```ts
- * const repository = unknownRepo;
+ * const repository = testRepo.unknown;
  * ```
  */
-export const unknownRepo: Repository = {
-  owner: "unknown-owner",
-  name: "unknown-repo",
-  path: "unknown-path",
+export const testRepo: { normal: Repository; unknown: Repository } = {
+  normal: {
+    owner: "denoland",
+    name: "deno",
+    path: "README.md",
+  },
+  unknown: {
+    owner: "unknown-owner",
+    name: "unknown-repo",
+    path: "unknown-path",
+  },
 };
 
 /**
@@ -35,20 +33,18 @@ export const unknownRepo: Repository = {
  *
  * @example
  * ```ts
- * const ref = testRef;
+ * const ref = testRef.normal;
  * ```
- */
-export const testRef = "v1.0.0";
-
-/**
- * Sample version reference with slash for test.
  *
  * @example
  * ```ts
- * const ref = testRefSlash;
+ * const ref = testRef.slash;
  * ```
  */
-export const testRefSlash = "renovate/configure";
+export const testRef: { normal: string; slash: string } = {
+  normal: "v1.0.0",
+  slash: "renovate/configure",
+};
 
 /**
  * Sample user agent for test.
