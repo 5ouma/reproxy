@@ -41,6 +41,16 @@ export const unknownRepo: Repository = {
 export const testRef = "v1.0.0";
 
 /**
+ * Sample version reference with slash for test.
+ *
+ * @example
+ * ```ts
+ * const ref = testRefSlash;
+ * ```
+ */
+export const testRefSlash = "renovate/configure";
+
+/**
  * Sample user agent for test.
  *
  * @example

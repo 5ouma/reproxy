@@ -5,6 +5,7 @@ import app from "./server.ts";
 import {
   exportRepo,
   testRef,
+  testRefSlash,
   testRepo,
   testUserAgent,
 } from "./libs/test_utils.ts";
@@ -51,11 +52,23 @@ Deno.test("Serve", async (t: Deno.TestContext) => {
     assertEquals(res.status, STATUS_CODE.PermanentRedirect);
   });
 
-  await t.step("*", async () => {
+  await t.step("/:ref (with Slash)", async () => {
     exportRepo(testRepo);
-    const res: Response = await app.request("/anything/else");
+    const res: Response = await app.request(`/${testRefSlash}`);
 
-    assertEquals(res.headers.get("Location"), "/");
-    assertEquals(res.status, STATUS_CODE.SeeOther);
+    assertEquals(res.status, STATUS_CODE.OK);
+  });
+
+  await t.step("/:ref (withSlash, Redirect)", async () => {
+    exportRepo(testRepo);
+    const res: Response = await app.request(`/${testRefSlash}`, {
+      headers: { "User-Agent": testUserAgent.toString() },
+    });
+
+    assertEquals(
+      res.headers.get("Location"),
+      getGitHubUrl(testRepo, testRefSlash).toString(),
+    );
+    assertEquals(res.status, STATUS_CODE.PermanentRedirect);
   });
 });
