@@ -6,14 +6,18 @@ import { getGitHubUrl } from "./utils.ts";
 
 Deno.test("Redirect Detection", async (t: Deno.TestContext) => {
   await t.step("normal", () => {
-    const url: URL | null = checkRedirect(testUserAgent, testRepo);
+    const url: URL | null = checkRedirect(testUserAgent, testRepo.normal);
 
-    assertEquals(url, getGitHubUrl(testRepo));
+    assertEquals(url, getGitHubUrl(testRepo.normal));
   });
 
   await t.step("with ref", () => {
-    const url: URL | null = checkRedirect(testUserAgent, testRepo, testRef);
+    const url: URL | null = checkRedirect(
+      testUserAgent,
+      testRepo.normal,
+      testRef.normal,
+    );
 
-    assertEquals(url, getGitHubUrl(testRepo, testRef));
+    assertEquals(url, getGitHubUrl(testRepo.normal, testRef.normal));
   });
 });
