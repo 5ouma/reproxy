@@ -1,19 +1,20 @@
 import { assertEquals } from "@std/assert";
+import { describe, test } from "@std/testing/bdd";
 import { UserAgent } from "@std/http/user-agent";
 
 import { checkRedirect } from "./redirect.ts";
 import { testRef, testRepo, testUserAgent } from "./test_utils.ts";
 import { getGitHubUrl } from "./utils.ts";
 
-Deno.test("Redirect Detection", () => {
-  Deno.test("Direct", async (t: Deno.TestContext) => {
-    await t.step("normal", () => {
+describe("Redirect Detection", () => {
+  describe("Direct", () => {
+    test("normal", () => {
       const url: URL | null = checkRedirect(new UserAgent(""), testRepo.normal);
 
       assertEquals(url, null);
     });
 
-    await t.step("with ref", () => {
+    test("with ref", () => {
       const url: URL | null = checkRedirect(
         new UserAgent(""),
         testRepo.normal,
@@ -24,14 +25,14 @@ Deno.test("Redirect Detection", () => {
     });
   });
 
-  Deno.test("Redirect", async (t: Deno.TestContext) => {
-    await t.step("normal", () => {
+  describe("Redirect", () => {
+    test("normal", () => {
       const url: URL | null = checkRedirect(testUserAgent, testRepo.normal);
 
       assertEquals(url, getGitHubUrl(testRepo.normal));
     });
 
-    await t.step("with ref", () => {
+    test("with ref", () => {
       const url: URL | null = checkRedirect(
         testUserAgent,
         testRepo.normal,

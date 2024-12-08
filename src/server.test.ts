@@ -1,5 +1,6 @@
 import { assertEquals } from "@std/assert";
 import { STATUS_CODE } from "@std/http/status";
+import { beforeEach, describe, test } from "@std/testing/bdd";
 
 import app from "./server.ts";
 import {
@@ -10,16 +11,19 @@ import {
 } from "./libs/test_utils.ts";
 import { getGitHubUrl } from "./libs/utils.ts";
 
-Deno.test("Serve", () => {
-  Deno.test("/", async (t: Deno.TestContext) => {
+describe("Serve", () => {
+  beforeEach(() => {
     exportRepo(testRepo.normal);
-    await t.step("Direct", async () => {
+  });
+
+  describe("/", () => {
+    test("Direct", async () => {
       const res: Response = await app.request("/");
 
       assertEquals(res.status, STATUS_CODE.OK);
     });
 
-    await t.step("Redirect", async () => {
+    test("Redirect", async () => {
       const res: Response = await app.request("/", {
         headers: { "User-Agent": testUserAgent.toString() },
       });
@@ -32,15 +36,14 @@ Deno.test("Serve", () => {
     });
   });
 
-  Deno.test("/:ref", async (t: Deno.TestContext) => {
-    exportRepo(testRepo.normal);
-    await t.step("Direct", async () => {
+  describe("/:ref", () => {
+    test("Direct", async () => {
       const res: Response = await app.request(`/${testRef.normal}`);
 
       assertEquals(res.status, STATUS_CODE.OK);
     });
 
-    await t.step("Redirect", async () => {
+    test("Redirect", async () => {
       const res: Response = await app.request(`/${testRef.normal}`, {
         headers: { "User-Agent": testUserAgent.toString() },
       });
@@ -53,16 +56,14 @@ Deno.test("Serve", () => {
     });
   });
 
-  Deno.test("/:ref (with Slash)", async (t: Deno.TestContext) => {
-    await t.step("Direct", async () => {
-      exportRepo(testRepo.normal);
+  describe("/:ref (with Slash)", () => {
+    test("Direct", async () => {
       const res: Response = await app.request(`/${testRef.slash}`);
 
       assertEquals(res.status, STATUS_CODE.OK);
     });
 
-    await t.step("Redirect", async () => {
-      exportRepo(testRepo.normal);
+    test("Redirect", async () => {
       const res: Response = await app.request(`/${testRef.slash}`, {
         headers: { "User-Agent": testUserAgent.toString() },
       });
