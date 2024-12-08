@@ -27,7 +27,7 @@ const app: Hono = new Hono();
 export default app;
 app.use(logger());
 app
-  .get("/:ref?", async (ctx: Context) => {
+  .get("/:ref{.+}?", async (ctx: Context) => {
     const { REPOSITORY_OWNER, REPOSITORY_NAME, REPOSITORY_PATH, GITHUB_TOKEN } =
       env<
         {
@@ -53,5 +53,4 @@ app
     return url
       ? ctx.redirect(url.toString(), STATUS_CODE.PermanentRedirect)
       : ctx.text(...await getContent(repository, ref, GITHUB_TOKEN));
-  })
-  .get("*", (ctx: Context) => ctx.redirect("/", STATUS_CODE.SeeOther));
+  });
