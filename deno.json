@@ -6,6 +6,7 @@
     "include": ["LICENSE", "README.md", "deno.json", "src/"],
     "exclude": ["**/*.test.ts", "src/libs/test_utils.ts"]
   },
+  "lock": { "frozen": true },
   "tasks": {
     "serve": "deno serve --env-file='.env' -EN='api.github.com'",
     "start": "deno task serve src/server.ts",
