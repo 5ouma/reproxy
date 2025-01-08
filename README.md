@@ -4,19 +4,18 @@
 
 **🚚 Deliver any files in the GitHub repository**
 
-[![GitHub Release](https://img.shields.io/github/v/release/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/releases)
+<br />
+
+[![GitHub Release](https://img.shields.io/github/v/release/5ouma/reproxy?label=Release&style=flat-square)](https://github.com/5ouma/reproxy/releases)
 [![JSR](https://jsr.io/badges/@5ouma/reproxy?style=flat-square)](https://jsr.io/@5ouma/reproxy)
 [![JSR Score](https://jsr.io/badges/@5ouma/reproxy/score)](https://jsr.io/@5ouma/reproxy)
 <br />
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/5ouma/reproxy?style=flat-square)
-![GitHub repo size](https://img.shields.io/github/repo-size/5ouma/reproxy?style=flat-square)
-[![GitHub last commit](https://img.shields.io/github/last-commit/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/commit/HEAD)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/5ouma/reproxy?style=flat-square)](https://github.com/5ouma/reproxy/commits/main)
-<br />
-[![CI](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/ci.yml?label=ci&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/release.yml?label=release&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/release.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/ci.yml?label=CI&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/release.yml?label=Release&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/release.yml)
 [![pre-commit](https://img.shields.io/github/actions/workflow/status/5ouma/reproxy/pre-commit.yml?label=pre-commit&style=flat-square)](https://github.com/5ouma/reproxy/actions/workflows/pre-commit.yml)
 [![codecov](https://codecov.io/github/5ouma/reproxy/graph/badge.svg)](https://codecov.io/github/5ouma/reproxy)
+
+![Repobeats Analytics Image](https://repobeats.axiom.co/api/embed/1a8a73d955b8c9a227d007646d77ca8e22f6e88c.svg)
 
 </div>
 
