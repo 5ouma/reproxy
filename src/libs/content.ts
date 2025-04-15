@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/rest";
 import type { RequestError } from "@octokit/request-error";
-import type { StatusCode } from "@std/http";
-export type { StatusCode };
+import type { ContentfulStatusCode } from "@hono/hono/utils/http-status";
+export type { ContentfulStatusCode };
 
 import type { Repository } from "./types.ts";
 
@@ -64,7 +64,7 @@ export async function getContent(
   repository: Repository,
   ref: string | undefined = undefined,
   token: string | undefined = undefined,
-): Promise<[string, StatusCode]> {
+): Promise<[string, ContentfulStatusCode]> {
   const octokit = new Octokit({ auth: token });
 
   try {
@@ -81,7 +81,7 @@ export async function getContent(
     const requestError = error as RequestError;
     return [
       `⚠️ ${requestError.status}: ${requestError.message}`,
-      requestError.status as StatusCode,
+      requestError.status as ContentfulStatusCode,
     ];
   }
 }
