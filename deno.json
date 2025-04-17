@@ -1,6 +1,6 @@
 {
   "name": "@5ouma/reproxy",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "exports": "./src/server.ts",
   "publish": {
     "include": ["LICENSE", "README.md", "deno.json", "src/"],
