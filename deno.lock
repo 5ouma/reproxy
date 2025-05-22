@@ -21,6 +21,7 @@
     "jsr:@std/streams@^1.0.9": "1.0.9",
     "jsr:@std/testing@1.0.12": "1.0.12",
     "npm:@octokit/request-error@6.1.8": "6.1.8",
+    "npm:@octokit/request-error@7.0.0": "7.0.0",
     "npm:@octokit/rest@21.1.1": "21.1.1_@octokit+core@6.1.5",
     "npm:@types/node@*": "22.15.15"
   },
@@ -114,7 +115,7 @@
         "@octokit/auth-token",
         "@octokit/graphql",
         "@octokit/request",
-        "@octokit/request-error",
+        "@octokit/request-error@6.1.8",
         "@octokit/types@14.0.0",
         "before-after-hook",
         "universal-user-agent"
@@ -167,11 +168,17 @@
         "@octokit/types@14.0.0"
       ]
     },
+    "@octokit/request-error@7.0.0": {
+      "integrity": "sha512-KRA7VTGdVyJlh0cP5Tf94hTiYVVqmt2f3I6mnimmaVz4UG3gQV/k4mDJlJv3X67iX6rmN7gSHCF8ssqeMnmhZg==",
+      "dependencies": [
+        "@octokit/types@14.0.0"
+      ]
+    },
     "@octokit/request@9.2.3": {
       "integrity": "sha512-Ma+pZU8PXLOEYzsWf0cn/gY+ME57Wq8f49WTXA8FMHp2Ps9djKw//xYJ1je8Hm0pR2lU9FUGeJRWOtxq6olt4w==",
       "dependencies": [
         "@octokit/endpoint",
-        "@octokit/request-error",
+        "@octokit/request-error@6.1.8",
         "@octokit/types@14.0.0",
         "fast-content-type-parse",
         "universal-user-agent"
@@ -224,7 +231,7 @@
       "jsr:@std/http@1.0.16",
       "jsr:@std/path@1.0.9",
       "jsr:@std/testing@1.0.12",
-      "npm:@octokit/request-error@6.1.8",
+      "npm:@octokit/request-error@7.0.0",
       "npm:@octokit/rest@21.1.1"
     ]
   }
