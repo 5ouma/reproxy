@@ -17,6 +17,7 @@
     "jsr:@std/media-types@^1.1.0": "1.1.0",
     "jsr:@std/net@^1.0.4": "1.0.4",
     "jsr:@std/path@1.0.9": "1.0.9",
+    "jsr:@std/path@1.1.0": "1.1.0",
     "jsr:@std/path@^1.0.9": "1.0.9",
     "jsr:@std/path@^1.1.0": "1.1.0",
     "jsr:@std/streams@^1.0.9": "1.0.9",
@@ -226,7 +227,7 @@
       "jsr:@hono/hono@4.7.10",
       "jsr:@std/assert@1.0.13",
       "jsr:@std/http@1.0.17",
-      "jsr:@std/path@1.0.9",
+      "jsr:@std/path@1.1.0",
       "jsr:@std/testing@1.0.13",
       "npm:@octokit/request-error@7.0.0",
       "npm:@octokit/rest@22.0.0"
