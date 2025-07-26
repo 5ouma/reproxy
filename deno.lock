@@ -5,13 +5,13 @@
     "jsr:@std/assert@1.0.13": "1.0.13",
     "jsr:@std/assert@^1.0.13": "1.0.13",
     "jsr:@std/async@^1.0.13": "1.0.13",
-    "jsr:@std/cli@^1.0.20": "1.0.21",
+    "jsr:@std/cli@^1.0.21": "1.0.21",
     "jsr:@std/data-structures@^1.0.9": "1.0.9",
     "jsr:@std/encoding@^1.0.10": "1.0.10",
     "jsr:@std/fmt@^1.0.8": "1.0.8",
     "jsr:@std/fs@^1.0.19": "1.0.19",
     "jsr:@std/html@^1.0.4": "1.0.4",
-    "jsr:@std/http@1.0.19": "1.0.19",
+    "jsr:@std/http@1.0.20": "1.0.20",
     "jsr:@std/internal@^1.0.10": "1.0.10",
     "jsr:@std/internal@^1.0.6": "1.0.10",
     "jsr:@std/internal@^1.0.9": "1.0.10",
@@ -60,8 +60,8 @@
     "@std/html@1.0.4": {
       "integrity": "eff3497c08164e6ada49b7f81a28b5108087033823153d065e3f89467dd3d50e"
     },
-    "@std/http@1.0.19": {
-      "integrity": "52128c8d00a1f0b20019f8b72376e7ef5f3133375b6f805b5bc89b9de2ad4686",
+    "@std/http@1.0.20": {
+      "integrity": "b5cc33fc001bccce65ed4c51815668c9891c69ccd908295997e983d8f56070a1",
       "dependencies": [
         "jsr:@std/cli",
         "jsr:@std/encoding",
@@ -230,7 +230,7 @@
     "dependencies": [
       "jsr:@hono/hono@4.8.5",
       "jsr:@std/assert@1.0.13",
-      "jsr:@std/http@1.0.19",
+      "jsr:@std/http@1.0.20",
       "jsr:@std/path@1.1.1",
       "jsr:@std/testing@1.0.15",
       "npm:@octokit/request-error@7.0.0",
