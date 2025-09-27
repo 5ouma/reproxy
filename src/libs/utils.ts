@@ -55,12 +55,12 @@ export async function getDefaultBranch(
  *   name: "reproxy",
  *   path: "src/server.ts",
  * };
- * const url: URL = getGitHubUrl(repository);
+ * const url: URL = getGitHubUrl(repository, "main");
  * ```
  */
 export function getGitHubUrl(
   repository: Repository,
-  ref: string = "master",
+  ref: string,
 ): URL {
   return new URL(
     join(
