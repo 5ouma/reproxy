@@ -9,7 +9,7 @@ import {
   testRepo,
   testUserAgent,
 } from "./libs/test_utils.ts";
-import { getGitHubUrl } from "./libs/utils.ts";
+import { getDefaultBranch, getGitHubUrl } from "./libs/utils.ts";
 
 describe("Serve", () => {
   beforeEach(() => {
@@ -30,7 +30,11 @@ describe("Serve", () => {
 
       assertEquals(
         res.headers.get("Location"),
-        getGitHubUrl(testRepo.normal).toString(),
+        getGitHubUrl(
+          testRepo.normal,
+          await getDefaultBranch(testRepo.normal, undefined),
+        )
+          .toString(),
       );
       assertEquals(res.status, STATUS_CODE.PermanentRedirect);
     });
