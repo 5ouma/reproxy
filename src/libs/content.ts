@@ -62,8 +62,8 @@ import type { Repository } from "./types.ts";
 
 export async function getContent(
   repository: Repository,
-  ref: string | undefined = undefined,
-  token: string | undefined = undefined,
+  ref?: string,
+  token?: string,
 ): Promise<[string, ContentfulStatusCode]> {
   const octokit = new Octokit({ auth: token });
 
