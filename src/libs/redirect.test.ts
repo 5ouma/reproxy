@@ -4,18 +4,21 @@ import { UserAgent } from "@std/http/user-agent";
 
 import { checkRedirect } from "./redirect.ts";
 import { testRef, testRepo, testUserAgent } from "./test_utils.ts";
-import { getGitHubUrl } from "./utils.ts";
+import { getDefaultBranch, getGitHubUrl } from "./utils.ts";
 
 describe("Redirect Detection", () => {
   describe("Direct", () => {
-    test("normal", () => {
-      const url: URL | null = checkRedirect(new UserAgent(""), testRepo.normal);
+    test("normal", async () => {
+      const url: URL | null = await checkRedirect(
+        new UserAgent(""),
+        testRepo.normal,
+      );
 
       assertEquals(url, null);
     });
 
-    test("with ref", () => {
-      const url: URL | null = checkRedirect(
+    test("with ref", async () => {
+      const url: URL | null = await checkRedirect(
         new UserAgent(""),
         testRepo.normal,
         testRef.normal,
@@ -26,14 +29,23 @@ describe("Redirect Detection", () => {
   });
 
   describe("Redirect", () => {
-    test("normal", () => {
-      const url: URL | null = checkRedirect(testUserAgent, testRepo.normal);
+    test("normal", async () => {
+      const url: URL | null = await checkRedirect(
+        testUserAgent,
+        testRepo.normal,
+      );
 
-      assertEquals(url, getGitHubUrl(testRepo.normal));
+      assertEquals(
+        url,
+        getGitHubUrl(
+          testRepo.normal,
+          await getDefaultBranch(testRepo.normal, undefined),
+        ),
+      );
     });
 
-    test("with ref", () => {
-      const url: URL | null = checkRedirect(
+    test("with ref", async () => {
+      const url: URL | null = await checkRedirect(
         testUserAgent,
         testRepo.normal,
         testRef.normal,

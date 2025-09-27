@@ -2,7 +2,7 @@ import type { UserAgent } from "@std/http/user-agent";
 export type { UserAgent };
 
 import type { Repository } from "./types.ts";
-import { getGitHubUrl } from "./utils.ts";
+import { getDefaultBranch, getGitHubUrl } from "./utils.ts";
 
 /**
  * Check if accessed from a browser and return the GitHub URL.
@@ -22,7 +22,7 @@ import { getGitHubUrl } from "./utils.ts";
  *   name: "deno",
  *   path: "README.md",
  * };
- * const url: URL | null = checkRedirect(userAgent, repository);
+ * const url: URL | null = await checkRedirect(userAgent, repository);
  * ```
  * @example Use a specific branch
  * ```ts
@@ -36,7 +36,7 @@ import { getGitHubUrl } from "./utils.ts";
  *   path: "README.md",
  * };
  * const branch = "main";
- * const url: URL | null = checkRedirect(userAgent, repository, branch);
+ * const url: URL | null = await checkRedirect(userAgent, repository, branch);
  * ```
  * @example Use a specific tag
  * ```ts
@@ -50,7 +50,7 @@ import { getGitHubUrl } from "./utils.ts";
  *   path: "README.md",
  * };
  * const tag = "v1.0.0";
- * const url: URL | null = checkRedirect(userAgent, repository, tag);
+ * const url: URL | null = await checkRedirect(userAgent, repository, tag);
  * ```
  * @example Use a specific commit
  * ```ts
@@ -64,15 +64,19 @@ import { getGitHubUrl } from "./utils.ts";
  *   path: "README.md",
  * };
  * const commit = "a1b2c3d4e5f6";
- * const url: URL | null = checkRedirect(userAgent, repository, commit);
+ * const url: URL | null = await checkRedirect(userAgent, repository, commit);
  * ```
  */
-export function checkRedirect(
+export async function checkRedirect(
   userAgent: UserAgent,
   repository: Repository,
-  ref: string = "master",
-): URL | null {
-  const url = getGitHubUrl(repository, ref);
+  ref?: string,
+  token?: string,
+): Promise<URL | null> {
+  const url = getGitHubUrl(
+    repository,
+    ref ?? await getDefaultBranch(repository, token),
+  );
 
   return userAgent?.browser.name ? url : null;
 }

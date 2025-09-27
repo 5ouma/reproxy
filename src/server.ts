@@ -44,7 +44,7 @@ app
     };
     const ref: string = ctx.req.param("ref");
 
-    const url: URL | null = checkRedirect(
+    const url: URL | null = await checkRedirect(
       new UserAgent(ctx.req.header("User-Agent") ?? ""),
       repository,
       ref,
