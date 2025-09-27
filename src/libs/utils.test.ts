@@ -5,7 +5,7 @@ import { getDefaultBranch } from "./utils.ts";
 import { testRepo } from "./test_utils.ts";
 
 describe("Get Default Branch", () => {
-  test("normal ", async () => {
+  test("normal", async () => {
     const defaultBranch: string = await getDefaultBranch(testRepo.normal);
 
     assertEquals(defaultBranch, "main");
