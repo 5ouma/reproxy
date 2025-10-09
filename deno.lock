@@ -3,8 +3,8 @@
   "specifiers": {
     "jsr:@hono/hono@4.9.10": "4.9.10",
     "jsr:@std/assert@1.0.15": "1.0.15",
-    "jsr:@std/assert@^1.0.13": "1.0.15",
-    "jsr:@std/async@^1.0.13": "1.0.15",
+    "jsr:@std/assert@^1.0.15": "1.0.15",
+    "jsr:@std/async@^1.0.15": "1.0.15",
     "jsr:@std/cli@^1.0.21": "1.0.23",
     "jsr:@std/data-structures@^1.0.9": "1.0.9",
     "jsr:@std/encoding@^1.0.10": "1.0.10",
@@ -19,8 +19,9 @@
     "jsr:@std/path@1.1.0": "1.1.0",
     "jsr:@std/path@1.1.2": "1.1.2",
     "jsr:@std/path@^1.1.1": "1.1.2",
+    "jsr:@std/path@^1.1.2": "1.1.2",
     "jsr:@std/streams@^1.0.10": "1.0.13",
-    "jsr:@std/testing@1.0.15": "1.0.15",
+    "jsr:@std/testing@1.0.16": "1.0.16",
     "npm:@octokit/request-error@7.0.1": "7.0.1",
     "npm:@octokit/rest@22.0.0": "22.0.0_@octokit+core@7.0.5",
     "npm:@types/node@*": "22.15.15"
@@ -100,15 +101,15 @@
     "@std/streams@1.0.13": {
       "integrity": "772d208cd0d3e5dac7c1d9e6cdb25842846d136eea4a41a62e44ed4ab0c8dd9e"
     },
-    "@std/testing@1.0.15": {
-      "integrity": "a490169f5ccb0f3ae9c94fbc69d2cd43603f2cffb41713a85f99bbb0e3087cbc",
+    "@std/testing@1.0.16": {
+      "integrity": "a917ffdeb5924c9be436dc78bc32e511760e14d3a96e49c607fc5ecca86d0092",
       "dependencies": [
-        "jsr:@std/assert@^1.0.13",
+        "jsr:@std/assert@^1.0.15",
         "jsr:@std/async",
         "jsr:@std/data-structures",
         "jsr:@std/fs",
-        "jsr:@std/internal@^1.0.10",
-        "jsr:@std/path@^1.1.1"
+        "jsr:@std/internal@^1.0.12",
+        "jsr:@std/path@^1.1.2"
       ]
     }
   },
@@ -222,7 +223,7 @@
       "jsr:@std/assert@1.0.15",
       "jsr:@std/http@1.0.20",
       "jsr:@std/path@1.1.2",
-      "jsr:@std/testing@1.0.15",
+      "jsr:@std/testing@1.0.16",
       "npm:@octokit/request-error@7.0.1",
       "npm:@octokit/rest@22.0.0"
     ]
