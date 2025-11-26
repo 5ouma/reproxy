@@ -46,46 +46,46 @@ tags. To do this, simply add the ref name to the sub-directory. (i.e.
 
 2. Follow the steps depending on the runtime
 
-   - [🦕 Deno](https://deno.com)
+#### [🦕 Deno](https://deno.com)
 
-     1. Run this command
+1. Run this command
 
-        ```sh
-        deno serve -A --env-file='.env' jsr:@5ouma/reproxy
-        ```
+   ```sh
+   deno serve -A --env-file='.env' jsr:@5ouma/reproxy
+   ```
 
-   - [🍞 Bun](https://bun.sh)
+#### [🍞 Bun](https://bun.sh)
 
-     1. Add this code to the `index.ts`
+1. Add this code to the `index.ts`
 
-        ```ts
-        export { default } from "@5ouma/reproxy";
-        ```
+   ```ts
+   export { default } from "@5ouma/reproxy";
+   ```
 
-     2. Run these commands
+2. Run these commands
 
-        ```sh
-        bunx jsr add @5ouma/reproxy
-        bun run index.ts
-        ```
+   ```sh
+   bunx jsr add @5ouma/reproxy
+   bun run index.ts
+   ```
 
-   - [🐢 Node.js](https://nodejs.org)
+#### [🐢 Node.js](https://nodejs.org)
 
-     1. Add this code to the `index.js`
+1. Add this code to the `index.js`
 
-        ```js ignore
-        import { serve } from "@hono/node-server";
-        import app from "@5ouma/reproxy";
-        serve(app);
-        ```
+   ```js ignore
+   import { serve } from "@hono/node-server";
+   import app from "@5ouma/reproxy";
+   serve(app);
+   ```
 
-     2. Run these commands
+2. Run these commands
 
-        ```sh
-        npm install @hono/node-server
-        npx jsr add @5ouma/reproxy
-        node run index.js
-        ```
+   ```sh
+   npm install @hono/node-server
+   npx jsr add @5ouma/reproxy
+   node run index.js
+   ```
 
 <br />
 
