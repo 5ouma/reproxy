@@ -1,7 +1,7 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@hono/hono@4.11.3": "4.11.3",
+    "jsr:@hono/hono@4.11.4": "4.11.4",
     "jsr:@std/assert@1.0.16": "1.0.16",
     "jsr:@std/assert@^1.0.15": "1.0.16",
     "jsr:@std/async@^1.0.15": "1.0.16",
@@ -27,8 +27,8 @@
     "npm:@types/node@*": "22.15.15"
   },
   "jsr": {
-    "@hono/hono@4.11.3": {
-      "integrity": "de7f245516a970c60c6f4bf5b0f1585efbee38ee4e01171994c2b9d69d035d70"
+    "@hono/hono@4.11.4": {
+      "integrity": "aaf7b9d5a6b2422b0778c091b712ee1f018bc7e82138067d21eb27d7c2e1f5be"
     },
     "@std/assert@1.0.16": {
       "integrity": "6a7272ed1eaa77defe76e5ff63ca705d9c495077e2d5fd0126d2b53fc5bd6532",
@@ -225,7 +225,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@4.11.3",
+      "jsr:@hono/hono@4.11.4",
       "jsr:@std/assert@1.0.16",
       "jsr:@std/http@1.0.23",
       "jsr:@std/path@1.1.4",
