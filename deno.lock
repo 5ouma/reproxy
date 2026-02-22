@@ -5,13 +5,14 @@
     "jsr:@std/assert@1.0.19": "1.0.19",
     "jsr:@std/assert@^1.0.17": "1.0.19",
     "jsr:@std/async@^1.1.0": "1.2.0",
-    "jsr:@std/cli@^1.0.27": "1.0.28",
+    "jsr:@std/cli@^1.0.28": "1.0.28",
     "jsr:@std/data-structures@^1.0.10": "1.0.10",
     "jsr:@std/encoding@^1.0.10": "1.0.10",
     "jsr:@std/fmt@^1.0.9": "1.0.9",
     "jsr:@std/fs@^1.0.22": "1.0.23",
+    "jsr:@std/fs@^1.0.23": "1.0.23",
     "jsr:@std/html@^1.0.5": "1.0.5",
-    "jsr:@std/http@1.0.24": "1.0.24",
+    "jsr:@std/http@1.0.25": "1.0.25",
     "jsr:@std/internal@^1.0.12": "1.0.12",
     "jsr:@std/media-types@^1.1.0": "1.1.0",
     "jsr:@std/net@^1.0.6": "1.0.6",
@@ -58,13 +59,13 @@
     "@std/html@1.0.5": {
       "integrity": "4e2d693f474cae8c16a920fa5e15a3b72267b94b84667f11a50c6dd1cb18d35e"
     },
-    "@std/http@1.0.24": {
-      "integrity": "4dd59afd7cfd6e2e96e175b67a5a829b449ae55f08575721ec691e5d85d886d4",
+    "@std/http@1.0.25": {
+      "integrity": "577b4252290af1097132812b339fffdd55fb0f4aeb98ff11bdbf67998aa17193",
       "dependencies": [
         "jsr:@std/cli",
         "jsr:@std/encoding",
         "jsr:@std/fmt",
-        "jsr:@std/fs",
+        "jsr:@std/fs@^1.0.23",
         "jsr:@std/html",
         "jsr:@std/media-types",
         "jsr:@std/net",
@@ -105,7 +106,7 @@
         "jsr:@std/assert@^1.0.17",
         "jsr:@std/async",
         "jsr:@std/data-structures",
-        "jsr:@std/fs",
+        "jsr:@std/fs@^1.0.22",
         "jsr:@std/internal",
         "jsr:@std/path@^1.1.4"
       ]
@@ -225,7 +226,7 @@
     "dependencies": [
       "jsr:@hono/hono@4.12.0",
       "jsr:@std/assert@1.0.19",
-      "jsr:@std/http@1.0.24",
+      "jsr:@std/http@1.0.25",
       "jsr:@std/path@1.1.4",
       "jsr:@std/testing@1.0.17",
       "npm:@octokit/request-error@7.1.0",
