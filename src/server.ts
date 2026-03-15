@@ -42,7 +42,7 @@ app
       name: REPOSITORY_NAME,
       path: REPOSITORY_PATH,
     };
-    const ref: string = ctx.req.param("ref");
+    const ref: string | undefined = ctx.req.param("ref");
 
     const url: URL | null = await checkRedirect(
       new UserAgent(ctx.req.header("User-Agent") ?? ""),
