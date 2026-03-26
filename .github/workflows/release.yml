@@ -12,7 +12,9 @@ jobs:
   tagpr:
     name: 🔖 Release a New Version
     runs-on: Ubuntu-Slim
-    environment: Release
+    environment:
+      name: Release
+      deployment: false
     timeout-minutes: 1
     outputs:
       tag: ${{ steps.tagpr.outputs.tag }}
