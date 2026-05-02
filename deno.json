@@ -7,7 +7,6 @@
     "exclude": ["**/*.test.ts", "src/libs/test_utils.ts"]
   },
   "permissions": { "default": { "env": true, "net": ["api.github.com"] } },
-  "lock": { "frozen": true },
   "tasks": {
     "start": "deno serve -P --env-file='.env' src/server.ts",
     "dev": "deno serve -P --env-file='.env' --watch src/server.ts",
