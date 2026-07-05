@@ -16,7 +16,7 @@
     "jsr:@std/internal@^1.0.14": "1.0.14",
     "jsr:@std/media-types@^1.1.0": "1.1.0",
     "jsr:@std/net@^1.0.6": "1.0.6",
-    "jsr:@std/path@1.1.5": "1.1.5",
+    "jsr:@std/path@1.1.6": "1.1.6",
     "jsr:@std/path@^1.1.5": "1.1.6",
     "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/streams@^1.1.1": "1.1.1",
@@ -80,12 +80,6 @@
     },
     "@std/net@1.0.6": {
       "integrity": "110735f93e95bb9feb95790a8b1d1bf69ec0dc74f3f97a00a76ea5efea25500c"
-    },
-    "@std/path@1.1.5": {
-      "integrity": "ccea00982ea28c36becaf6e62f855406c76a8c32d462f66f415bbb7d83a271bc",
-      "dependencies": [
-        "jsr:@std/internal@^1.0.14"
-      ]
     },
     "@std/path@1.1.6": {
       "integrity": "c68485c2a4dfbb5ae3cc74fae4e8c4e5d874cf8a8ed12927917235c758b46cbe",
@@ -212,7 +206,7 @@
       "jsr:@hono/hono@4.12.27",
       "jsr:@std/assert@1.0.19",
       "jsr:@std/http@1.1.2",
-      "jsr:@std/path@1.1.5",
+      "jsr:@std/path@1.1.6",
       "jsr:@std/testing@1.0.19",
       "npm:@octokit/request-error@7.1.0",
       "npm:@octokit/rest@22.0.1"
